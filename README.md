@@ -1,4 +1,4 @@
-magicsword.github.com-source
-============================
+magicsword.github.com
+=====================
 
-Source code of magicsword.github.com
+my porsonal website + blog
