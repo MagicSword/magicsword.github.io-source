@@ -8,15 +8,15 @@ CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 FTP_HOST=localhost
-FTP_USER=anonymous
-FTP_TARGET_DIR=/
+FTP_USER=pi
+FTP_TARGET_DIR=/home/pi/
 
 SSH_HOST=localhost
 SSH_PORT=22
 SSH_USER=pi
 SSH_TARGET_DIR=/home/pi/public_html
 
-DROPBOX_DIR=~/Dropbox/Public/
+DROPBOX_DIR=~/public_html/blog/
 
 help:
 	@echo 'Makefile for a pelican Web site                                        '

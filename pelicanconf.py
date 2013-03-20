@@ -1,22 +1,46 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+# -*- coding: utf-8 -*-
+AUTHOR = u'MagicSword'
+SITENAME = u"Wondering"
+SITEURL = 'http://magicsword.github.com'
+TIMEZONE = "Asia/Taipei"
 
-AUTHOR = u'Nero'
-SITENAME = u'Wondering'
-SITEURL = u'http://magicsword.github.com'
 
-TIMEZONE = 'Asia/Taipei'
 
-DEFAULT_LANG = u'en'
+GITHUB_URL = 'http://github.com/magicsword/'
+DISQUS_SITENAME = "magicsword-blog"
+PDF_GENERATOR = False
+REVERSE_CATEGORY_ORDER = True
+LOCALE = "C"
+DEFAULT_PAGINATION = 4
+DEFAULT_DATE = (2013, 03, 01, 14, 01, 01)
 
-# Blogroll
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+
 LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
           ('Python.org', 'http://python.org'),
           ('Jinja2', 'http://jinja.pocoo.org'),
-          ('You can modify those links in your config file', '#'),)
+          ('Disqus','http://magicsword-blog.disqus.com/'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 10
+SOCIAL = (('twitter', 'http://twitter.com/magicsword'),
+          ('facecook', 'http://www.facebook.com/nero.miller'),
+          ('github', 'http://github.com/magicsword'),)
+
+# global metadata to all the contents
+# DEFAULT_METADATA = (('Author', 'MagicSword'),)
+
+# static paths will be copied under the same name
+STATIC_PATHS = ["images", ]
+
+# A list of files to copy from the source to the destination
+# FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
+FILES_TO_COPY = (
+                  ('extra/favicon.ico', 'favicon.ico'),
+                  ('extra/robots.txt', 'robots.txt'),
+                )
+# custom page generated with a jinja2 template
+# TEMPLATE_PAGES = {'pages/jinja2_template.html': 'jinja2_template.html'}
+
+#Theme
+THEME = 'tuxlite_tbs'
