@@ -1,0 +1,111 @@
+My template article
+###################
+
+:slug: my-template-article
+:date: 2013-03-09 05:20
+:tags: template, misc
+:category: Misc
+:author: MagicSword
+:lang: zh-tw
+:summary: Short version for index and feeds
+
+
+Rstblog 安裝，使用¬
+===========================================¬
+.. intro:
+
+這裡打一段前言。Blog的簡單介紹
+
+
+.. <!-- more -->
+
+Introduction
+============
+
+.. code-block:: python
+
+   import os
+   print "hello"
+
+
+
+我想測試 Python_ 的連結，和 `David Allen`_ 的連結，
+還有一些文件的連結，me [1]_ ，還有 they [2]_ ，另外還有 other [3]_
+
+
+Sections
+
+Section headers (ref) are created by underlining (and optionally overlining)
+the section title with a punctuation character, at least as long as the text:
+=================
+This is a heading
+=================
+
+Normally, there are no heading levels assigned to certain characters as the
+structure is determined from the succession of headings. However, for the
+Python documentation, this convention is used which you may follow:
+  # with overline, for parts
+  * with overline, for chapters
+  =, for sections
+  -, for subsections
+  ^, for subsubsections
+  ", for paragraphs
+
+
+  http://sphinx.pocoo.org/rest.html#sections
+http://docutils.sourceforge.net/docs/user/rst/quickref.html#section-structure
+
+
+Section 1.1 Title
+-----------------
+
+Subsection 1.1.1 Title
+^^^^^^^^^^^^^^^^^^^^^^^
+
+* a bullet point using "*"
+
+  - a sub-list using "-"
+
+    + yet another sub-list
+
+  - another item
+
+Section 1.2 Title
+-----------------
+
+.. .. include:: examples/helloworld2.py
+..     :literal:
+..     :start-after: #end_header
+.. 
+.. .. image:: images/helloworld.png
+.. 
+.. 
+.. .. figure:: images/button.png
+..    :class: figure
+..    :alt: Button with Pixmap and Label
+.. 
+..    Figure 6.1, “Button with Pixmap and Label”
+
+.. warning:: Warning
+.. note:: Note
+.. rubric:: Ruby是？
+
+
+Reference
+=========
+.. 參考文件連結
+
+.. [1] `Github Pages Help <https://help.github.com/categories/20/articles>`_
+
+.. 其他參考的連結，人，網站，wikipedia page
+
+.. _jQuery: http://en.wikipedia.org/wiki/Jquery
+.. _Ajax: http://zh.wikipedia.org/wiki/Ajax
+.. _DOM: http://en.wikipedia.org/wiki/Document_Object_Model
+
+
+
+.. _thisfile:
+.. vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:
+.. template_version=0.3_20120112
+

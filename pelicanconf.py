@@ -38,6 +38,7 @@ STATIC_PATHS = ["images", ]
 FILES_TO_COPY = (
                   ('extra/favicon.ico', 'favicon.ico'),
                   ('extra/robots.txt', 'robots.txt'),
+                  ('extra/my-template-article.tmpl','my-template-article.tmpl')
                 )
 # custom page generated with a jinja2 template
 # TEMPLATE_PAGES = {'pages/jinja2_template.html': 'jinja2_template.html'}
