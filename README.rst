@@ -1,4 +1,4 @@
-magicsword.github.com
+magicsword.github.io
 =====================
 
 My porsonal website + blog.
