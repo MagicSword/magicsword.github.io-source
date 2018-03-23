@@ -4,6 +4,7 @@ title = "After Dark" # Homepage title and page title suffix
 paginate = 10 # Number of posts to show before paginating
 
 theme = "after-dark" # Set default theme
+toc = true
 
 enableRobotsTXT = true # Suggested, enable robots.txt file
 googleAnalytics = "" # Optional, add tracking Id for analytics
@@ -12,8 +13,8 @@ SectionPagesMenu = "main" # Enable menu system for lazy bloggers
 footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
 
 [params]
-  description = "" # Suggested, controls default description meta
-  author = "" # Optional, controls author name display on posts
+  description = "programming, writing" # Suggested, controls default description meta
+  author = "Nero" # Optional, controls author name display on posts
   hide_author = false # Optional, set true to hide author name on posts
   show_menu = true # Optional, set true to enable section menu
   powered_by = true # Optional, set false to disable credits
@@ -21,7 +22,14 @@ footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
     "https://source.unsplash.com/category/technology/2000x1322"
   ] # Suggested, controls default Open Graph images
   theme_variant = "standard dark" # Optional, for use to overriding default theme
+  noindex_kinds = [
+    "taxonomy",
+    "taxonomyTerm"
+  ]
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
 
 [[menu.main]]
@@ -39,3 +47,13 @@ footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
   weight = 3
   identifier = "articles"
   url = "/articles/"
+[[menu.main]]
+  name = "Tags"
+  weight = 4
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "Categories"
+  weight = 5
+  identifier = "categories"
+  url = "/categories/"
