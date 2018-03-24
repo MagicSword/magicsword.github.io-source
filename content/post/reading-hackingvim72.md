@@ -2,6 +2,7 @@
 title = "Reading Hackingvim72"
 date = 2018-03-24T01:00:23+08:00
 description = "HackingVim72 reading."
+draft = false
 toc = true
 categories = ["technology"]
 tags = ["reading","vim"]
@@ -45,7 +46,7 @@ Ch1: GETTING STARTED WITH VIM #簡介
 
 * Google用 Rust寫的新編輯器 [xi-editor](https://github.com/google/xi-editor)。
 * Emacs
-* Sublime-text2
+* [Sublime-text](https://www.sublimetext.com/3) 
 * Visual Stuido Code
 * Atom
 
@@ -258,9 +259,203 @@ Vim 7.0 以後有內建的 spell check
 Ch3: BETTER NAVIGATION         #移動 
 ====================================
 
-本章說明在各文件快速移動的方式。
+本章說明在各文件快速移動的方式。遊標移動、在多文件中移動、使用說明文件、搜索、標記。
 
 
+3.1 文件內移動
+--------------
+
+### 3.1.1 基於上下文的移動
+
+文件結構的不同，可分為兩種情形：
+
+* 一般文件：段落、語句、單詞
+* 程式碼：函數、區塊、單行
+
+#### 3.1.1.1 一般文件
+
+* `h`,`j`,`k`,`l`  #左、下、上、右
+* `{`,`}`      #段落首、尾
+* `g,`  `g;`  #最近修改過的地方，向前，向後
+* `(` ,`)`    #句首、句尾
+* `w`       #下一個單詞首字母
+* `b`       #前一個單詞首字母
+* `e`       #移動到單詞末尾
+
+單詞(Word)的定義: 
+
+> 由字母、數字、dash(\-)、underline(\_)組成
+> 以非空白字母組成
+
+#### 3.1.1.2 程式碼
+
+Vim無法辨識所有程式的結構，不過C語言預設是可以的。
+
+函數
+
+*  `[[` and `][`: Move backwards / forward to the next section beginning (for 
+example, start of a function)
+* `[]` and `]]`: Move backwards / forward to the next section end (for example, 
+end of a function)
+
+
+區塊
+
+* `[{`: Move to the beginning of the block
+* `]}`: Move to the end of the block 
+
+
+註解
+
+* `[/`: Move to the beginning of the comment block
+* `]/`: Move to the end of the comment block
+
+`gd`: 跳到變數定義區段
+`gD`: 跳到全域變數定義區段
+
+#### 3.1.2 在長行內移動
+
+長行：
+
+> 一行的內容過長，超過VIM視窗範圍的話，程式會自動把超出視窗寬的在下一行顯示。 
+
+`gk`,`gj` :會以視覺上的行為主而移動。
+
+
+3.2 使用 Help 說明文件
+------------------------
+
+Vim的說明文件可以：
+
+* 按 <F1> 進入
+* 或是在命令列輸入  `:help <keyword>` 
+
+移動
+* <C-]> : 跳到 keyword 所指的位置
+* <C-t> : 跳回前一個位置
+
+文章內還有一些比較進階的設定。
+
+
+3.3 在多個緩衝區(Buffer)間移動
+--------------------------------
+
+打開的文件，是存在緩衝區(Buffer)中。
+
+* `:buffers`: buffer list
+* `:buffer N`: jump to buffer N
+* `:bnext(bn)`: Next buffer
+* `:bprevious(bp)`: Previous buffer
+
+3.4 快速打開引用文件
+--------------------
+
+像是在 C語言中的 `#include`
+
+```clang
+#include "example.h"
+```
+
+在 `example.h` 上按 `gf`，Vim就會把檔案讀入緩衝區
+
+3.5 搜尋 Search
+----------------
+
+分三種：
+
+* 在目前文件中搜索
+* 在多文件中搜索
+* 在說明文件中搜索
+
+
+### 3.5.1 在目前文件中搜索
+
+找單詞
+
+* 普通模式下 `?example`，命令模式下 `/example`可以找單詞
+* `n`,`N`:在找到的結果向上，向上移動。
+* `//`,`??`: 上一次搜索的輸入
+* `#`,`*`: 搜索在遊標上的單詞，向上移動， 向下移動
+
+
+### 3.5.2 在多個文件中搜索
+
+搜索的指令，在Unix系統下有 `grep`，MSWin下有 `find`,`findstr`，
+而在 Vim下，有：
+
+```bash
+:vimgrep /pattern/[j][g] file file2... fileN
+```
+
+* /pattern/ : 正則表示式
+* `j`: 把結果輸入到 `quickfix` 列表
+* `g`: 如果在同一行內有三個符合的結果，則會都顯示
+
+`quickfix`
+
+* `:clist`:顯示 `quickfix`結果
+* `cnext(cn)`,`cprevious(cp)`:在 `quickfix`列表中移動
+
+### 3.5.3 在說明文件中搜索
+
+```bash
+:helpgrep pattern [@LANG]
+#`@LANG`，可以指定說明文件的語言，例子：
+:helpgrep completion@en
+```
+
+如果是新增加的文件，可以用下面的指令生成文件tags
+```bash
+:helptags /path/to/doc
+```
+
+3.6 標記位置
+------------
+
+有時文件太長，要在個各處移動，標記(Marks)可以在某行前
+作記號。例：
+
+* 可見標記
+* 隱形標記
+
+
+### 3.6.1 可見標記
+
+通常是會在行號前面，用來標記某一行的符號。
+
+```
+:sign define name arguments
+```
+
+定義標記列顏色
+```bash
+:highlight SignColumn guibg=darkgrey
+```
+
+pass
+
+### 3.6.2 隱形標記
+
+另一種標記方式，基本上看不到，除非打開標記列表
+
+
+`:marks`: 打開標記列表
+`ma` : 標記 `a`
+`\`a`: 移動到 `a`
+`:deletemarks markid1 markid2 markid3`:刪除標記`
+`:delmarks a f-i 1-4`:刪除 makrs
+`:delmarks !`:刪除目前buffer所有marks
+
+|標號|用法|
+|----|----|
+|0-9 |保留內部使用，通常是最近開啟文件|
+|a-z |本文件使用|
+|A-Z |可以跟文件使用，如果有`.viminfo`存檔，下次打開Vim時，還可以使用|
+
+3.7 小結
+---------
+
+這一節描述了cursor的移動，搜索、或是在各文件中移動的方式。
 
 
 
@@ -268,7 +463,7 @@ Ch3: BETTER NAVIGATION         #移動
 Ch4: PRODUCTION BOOSTERS       #增強生產力
 ==========================================
 
-
+這一章會簡介一些能增加效率的工具。
 
 
 
@@ -471,4 +666,4 @@ var d string
 1. [Hacking Vim 7.2 by Kim Schulz April 2010](https://www.packtpub.com/application-development/hacking-vim-72)
 2. [HackingVim72簡中](https://github.com/wuzhouhui/hacking_vim)
 3. [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
-4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
+4. [Vim Awesome](https://vimawesome.com/)

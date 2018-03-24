@@ -17,7 +17,13 @@ $hugo server -D
 $hugo new content/posts/my-first-post.md
 ```
 
+hugo  重新建立新站 ，記得新檔取消 draft
 
+在 `public` 下 ，輸入 
+
+```bash
+$ git push -u origin master
+```
 
 ```bash
 $ git init
