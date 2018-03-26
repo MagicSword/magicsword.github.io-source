@@ -465,9 +465,238 @@ Ch4: PRODUCTION BOOSTERS       #增強生產力
 
 這一章會簡介一些能增加效率的工具。
 
+4.1 模版
+--------
+
+建立模版 Template ，減少重複性的工作。
+
+4.1.1 模版文件
+---------------
+
+應該可以分為兩種行為
+
+* 新建立文件時，讀取 已有的模版  或是骨架 Skeleton
+* 在已存在的文件中，要加入小部分的文件結構 Snippets, 檔頭(C語言的 `#include`)，檔尾
+
+方法：
+
+* 建立模版檔：在 `$VIMHOME`/templates/下加入新的  `file-type.tpl` ，像是 `html.tpl`
+* 設定程式設定： 加入 `autocmd` 在開啟新檔時，自動讀入模版。
+
+4.1.2 把縮寫作為模版
+--------------------
+
+前面有提為的功能 縮寫可以用來快速輸入一些結構，像是迴圈、或是snippets
+
+4.1.3 snipMate
+--------------
+
+更完整的功能，有人編寫了完整的 plugins。
+
+https://vimawesome.com/plugin/snipmate
+https://www.vim.org/scripts/script.php?script_id=2540
+https://github.com/garbas/vim-snipmate
 
 
 
+4.1.4 其他 snippets Pluging
+----------------------------
+
+比較
+http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html
+
+除了 snipMate以外，還有其他plugins有snippets的功能
+
+UltiSnipsby HOLGER RAPP36216612
+UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!
+
+neosnippet-snippetsby SHOUGO1972908
+The standard snippets repository for neosnippet
+
+[vim-snippets](https://vimawesome.com/plugin/vim-snippets)
+* by HONZA POKORNY25449499
+* vim-snipmate default snippets (Previously snipmate-snippets)
+* 這個是 snippets程式片段檔的集合
+
+
+4.2 Tag List
+-------------
+
+產生程式中的所有關鍵字、函數名、…
+
+Tag List的產生要用外部的程式，常見的有：
+
+* Exuberant Ctags: For C, C++, Java, Perl, Python, Vim, Ruby (and 25 others)
+* Vtags: For Verilog files
+* Jtags: For Java files
+* Hdrtags: For C / C++, Asm, Lex / Yacc, LaTeX, Vim, and Maple 
+* Ptags: For Perl files
+
+用法，可以快速跳到函數定義的地方。
+
+
+###　4.2.1 Tag List 的其他用法
+
+
+除了用來找函數、和變數外，還有其他用法。
+
+`:help tags`
+
+
+4.3 AutoComplete 自動補全
+-------------------------
+
+分三種
+
+* 依前後文
+* 依字典
+* Omnicompletion
+
+4.3.1 已知單詞的自動補全
+
+`C-p` `C-n` 在打完的前兩個字母後按，
+
+會出現auto complete的選項，向前、或向後
+
+
+### 4.3.2 依字典的自動補全
+
+
+利用已有的字典作 autocomplete
+
+設定字典檔
+`:set dictionary+=/path/to/dictionary/file/with/words`
+
+
+
+`C-x C-k`
+x是進入autocomplete模式， k是從字典中找相近的單字。
+
+其他模式：
+
+* Ctrl+l: Complete whole lines of the text
+* Ctrl+n: Complete words from the current buffer
+* Ctrl+k: Complete words from the dictionaries
+* Ctrl+t: Complete words from the thesaurus (see :help 'thesaurus')
+* Ctrl+i: Words from the current and included files
+* S: Spelling the suggestions (Vim 7.0 and newer only)
+
+
+### 4.3.3 Omnicompletion
+
+`C-x C-o` 進入 Omnicompletion 模式
+
+pass
+
+### 4.3.4  多合一 autocomplete
+
+把前面多種autocomplete模式整合
+這個指令可以找到,`CleverTab()` 
+ 
+ `help ins-complete`
+ 
+可以用 `Tab` 來選取需要的選項。
+
+4.4 錄製巨集 Macros
+--------------------
+
+用來錄製指令
+
+* qa: Record from now on into register a. Any register can be used, but q is often used for simplicity.
+* q: If pressed while recording, the recording is ended. 
+* @a: Executes the recording in register a (replace with any register).
+* @@: Repeats the last executed command. 
+
+4.5 會話 Session
+----------------
+
+Vim保存了許多資訊，分成幾種：
+
+* View: 單一視窗的資訊
+* Session: 多個View的集合
+* Other: 其他通用的設定
+
+### 4.5.1 簡單會話使用
+
+保存目前視圖、會話
+```
+:mkview file
+:mksession file
+
+:set viewdir=$HOME/.vim/views  #設定視圖存放的目錄
+
+載入視圖方式
+$vim -S Session.vim
+:source Session.vim
+:loadview View.vim
+
+```
+
+### 4.5.2 個人化 Session 使用
+
+pass
+
+### 4.5.3 Sessions as a project manager
+
+pass
+
+4.6 暫存器 和 Undo 分支
+------------------------
+
+* 暫存器 Register: 儲存多個緩衝區的高級剪貼薄
+* Undo Branching: 文件修改的記錄
+
+### 4.6.1 暫存器
+
+
+
+### 4.6.2 Unod list
+
+
+
+
+4.7 Folding 折疉
+----------------
+
+把段落、或是區塊 多行折疉成一行
+
+### 4.7.1 Simple text file outlining
+### 4.7.2 Using vimdiff to track the changes
+### 4.7.3 Navigation in vimdiff 
+### 4.7.4 Using diff to track changes
+
+4.8 打開任意位置的文件
+----------------------
+
+打開遠端的文件
+```
+:Nread ftp://user@server/path/to/file
+:Nwrite server user passwd path/to/file
+
+```
+
+
+
+
+### 4.8.1 Faster remote file editing
+
+4.9 小結
+--------
+
+
+ 
+
+Ch5: ADVANCED FORMATTING 進階格式化 
+===================================
+
+
+
+Ch6: BASIC VIM SCRIPTING 基本 Vim Scripting
+===========================================
+
+
+Ch7: EXTENDED VIM SCRIPTING 進階 Vim Scripting
+==============================================
 
 
 

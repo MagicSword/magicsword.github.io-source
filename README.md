@@ -14,7 +14,7 @@ $hugo new site quickstart
 
 $hugo server -D
 
-$hugo new content/posts/my-first-post.md
+$hugo new posts/my-first-post.md
 ```
 
 hugo  重新建立新站 ，記得新檔取消 draft
