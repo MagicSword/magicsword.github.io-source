@@ -33,6 +33,8 @@ $ git commit -m "first commit"
 $ git push -u origin master
 ```
 
+Git設定
+[使用ssh登入git的設定](http://www.cnblogs.com/softidea/p/5448118.html)
 
 
 # Ref:
