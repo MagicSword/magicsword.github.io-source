@@ -37,6 +37,16 @@ Git設定
 [使用ssh登入git的設定](http://www.cnblogs.com/softidea/p/5448118.html)
 
 
+Vim設定
+`:help new-vim-server`
+其實早在 Vim 6.X 的時候就有的一個功能
+在 Ubuntu 8.04 上面要裝上 gvim 才能夠使用
+就是先執行一個 vim 來當 server
+`vim --servername VIM file1.txt`
+然後再執行
+`vim --remote-tab file2.txt`
+
+
 # Ref:
 
 1. [手把手教你通过Hugo搭建个人博客](http://www.jianshu.com/p/475110a1c811)

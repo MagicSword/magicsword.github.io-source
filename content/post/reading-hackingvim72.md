@@ -689,10 +689,106 @@ pass
 Ch5: ADVANCED FORMATTING 進階格式化 
 ===================================
 
+將文件重新排版的過程。
+
+* 文本格式化
+* 代碼格式化
+* 使用外部工具格式化
+
+5.1 文本格式化
+--------------
+
+### 5.1.1 文本分段
+
+例：將長行自動斷行
+
+`gpap`
+
+
+### 5.1.2 內文對齊
+
+向左、 置中、向右對齊
+
+
+### 5.1.3 標記標題
+
+在 Markdown、reST中，H1、H2的語法可以寫成：
+
+```
+Level1
+====== 
+
+Level2
+------
+
+-Level3-
+```
+
+這邊利用接鍵組合，可以快速在文字下加上相同長度的 `=`，或`-`
+
+像在 `New Heading`上按 `yypVr=o`
+
+
+### 5.1.4 建立清單
+
+用函式快速加入 lists的格式
+
+5.2 代碼格式化
+--------------
+
+排版良好的程式碼，對方便閱讀很有幫助。
+
+前面幾小節 介紹了縮排的幾個方式。
+
+* Autoindent `:set ai` : 會依前一行的設定，縮排之後的文件 
+* Smartindent `:set si` : smarter than autoindent
+* Cindent: pass
+* Indentexpr: pass
+
+
+
+要貼程式碼時，可以用下面的指令，讓貼上的程式碼排版不會跑掉。
+```
+:set paste
+:set nopaste
+:set pastetoggle
+
+```
+
+
+5.3 使用外部工具格式化
+-----------------------
+
+使用 其他程式來排版，像是 Indent,Berkeley Par,Tidy
+
+```
+#設定 indent
+:set equalprg=program
+```
+
+Tidy 是用來排版 XML,HTML 文件的工具。
+
+```
+# XML 文件
+au FileType xml exe ":silent 1,$!tidy --input-xml true --indent yes -q"
+# HTML 文件
+au FileType html,htm exe ":silent 1,$!tidy --indent yes -q"
+```
+
+5.4 小結
+--------
+
+本章介紹了一些排版的方式
+
 
 
 Ch6: BASIC VIM SCRIPTING 基本 Vim Scripting
 ===========================================
+
+
+
+
+
 
 
 Ch7: EXTENDED VIM SCRIPTING 進階 Vim Scripting
@@ -702,9 +798,54 @@ Ch7: EXTENDED VIM SCRIPTING 進階 Vim Scripting
 
 
 
+Appendix A Vim的其他功能
+========================
+
+Vim game，發 mail,twitter,IRC...
+
+或是 設定成 IDE 
+```
+:help compiler
+:help quickfix
+```
+
+參考 http://vim.wikia.com/wiki/Use_Vim_like_an_IDE
+
+
+Appendix B Vimrc 設定
+=====================
+
+Vimrc是 Vim 所有設定存放的檔案，隨著時間 Vimrc可能會變的越來越大，而以維護。
 
 
 
+B.1 保持 Vimrc 簡潔的技巧 
+-------------------------
+
+1. `:set nocompatible`: 把vim設成不相容模式，能開啟比較多的功能。
+2. 使用注釋: 使用 `"` 開頭的注釋，可以讓區段的功能容易了解修改
+3. 內容分段: 可以分成 全局、個人、腳本、其他 …有主題性的區段，方便修改。
+4. 使用多文件: 可以將部分的內容切出另一個檔案，在本檔內用 `source`讀進程式
+5. 測試時使用另一份vimrc
+6. 不同系統使用不定的設定: 像是 .vimrc.linux , \_vimrc.win32 , \_gvimrc.win32 , ... etc.
+
+
+B.2 Vimrc的設定系統
+-------------------
+
+[Vim Setup system : Vim Setup system - persistent setup directly in vim ](https://www.vim.org/scripts/script.php?script_id=1894)
+
+這個plugin讓vim的設定，有選單的可以直接設定，設定完了，再存回 .vimrc
+
+有GUI來設定，的確是方便了一些。
+
+
+B.3 Vimrc雲端儲存
+-----------------
+
+把vim的設定放在網路上，可以方便在多台機器間轉移。
+
+這邊是用 `netrw` 來讀寫網路上的設定檔。
 
 
 
@@ -896,3 +1037,4 @@ var d string
 2. [HackingVim72簡中](https://github.com/wuzhouhui/hacking_vim)
 3. [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 4. [Vim Awesome](https://vimawesome.com/)
+
