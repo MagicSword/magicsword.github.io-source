@@ -11,8 +11,11 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
+
+
 HackingVim72讀後心得。
-以及一些簡單的筆記。
+
+以及一些簡單的筆記、和心得記錄。
 
 <!--more-->
 
@@ -62,7 +65,7 @@ Ch2: PERSONALIZING VIM        #Vim個人化
 
 在Vim下輸入指令，直接顯示目前的設定檔位置：
 
-```bash
+```vim
 :echo $HOME
 :echo $MYVIMRC
 :echo $MYGVIMRC
@@ -74,18 +77,17 @@ gvimrc 主要是輸入一些在GUI特有的設定，最好是能把跟 vimrc的�
 --------
 
 在GUI下輸入，可以打開字型視窗。
-```bash
+```vim
 :set guifont=*
 ```
 
  不同的的作業系統下設定字型的方式有點差異。
-```bash
-#Linux
+```vim
+" Linux
 :set guifont=Courier\ New\ 14
-#MSWin
+" MSWin
 :set guifont=Courier\ New:14
-
-:help guifont  #下有更多的資料
+:help guifont  "更多的資料
 ```
 
 See Also: [Setting the font in the GUI](http://vim.wikia.com/wiki/Setting_the_font_in_the_GUI)
@@ -103,13 +105,13 @@ pass
 ----------------------
 狀態列可以設定滿多東西的，文件名，格式，文件長度…
 
-```bash
+```vim
 :set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYP[HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 ```
 
 但這設定完後，不會馬上出現，要設定 statusline的位置在最後兩行，才會出現。
 
-```bash
+```vim
 :set laststatus=2  #狀態列在最後第二行
 :set laststatus=0  #狀態列關閉
 ```
@@ -123,14 +125,14 @@ pass
 ---------------------
 
 增加選單 
-```bash
+```vim
 :menu menupath command
 ```
 
 `menu` 的指令就是像 `map` 把選單映射到一個指令
 
 例如
-```bash
+```vim
 :menu Tabs.Next <ESC>:tabnext<cr>
 ```
 
@@ -139,9 +141,9 @@ pass
 
 從 Vim 7.0開始支援 頁籤 Tabs，每個 Tabs有個別的屬性。
 
-```bash
-:set tabline tabline-layout  #Tabs的狀態列
-:set guitablabel #gvim的Tab狀態列
+```vim
+:set tabline tabline-layout  " Tabs的狀態列
+:set guitablabel " gvim的Tab狀態列
 ```
 
 2.8 工作區個人化
@@ -149,38 +151,34 @@ pass
 
 ### 2.8.1 光標 cursor 
 
-```bash
-:set cursorline   #顯示cursor line
-
+```vim
+:set cursorline   " 顯示cursor line
 :highlight CursorLine guibg=lightblue ctermbg=lightgray
-#設定 cursorline 顏色
-:set cursorcolumn #顯示縱向的指標行
+" 設定 cursorline 顏色
+:set cursorcolumn " 顯示縱向的指標行
 :highlight CursorColumn guibg=blue ctermbg=gray
-#設定 cursorcolumn 顏色
-:set nocursorcolumn #關閉cursorcolumn
+" 設定 cursorcolumn 顏色
+:set nocursorcolumn " 關閉cursorcolumn
 ```
 ### 2.8.2 行號 line numbers
 
-```bash
-#打開行號
+```vim
+" 打開行號
 :set number
 :set nu
-
 :set nonumber
 :set nonu
-
-#預設的行號佔 4個space, 下面指令可以修改預設值
+" 預設的行號佔 4個space, 下面指令可以修改預設值
 :set numberwidth=`widch`
-
 ```
 
 ### 2.8.3 拼寫檢查 Spell checking
 
 Vim 7.0 以後有內建的 spell check
 
-```bash
-:set spell  #打開拼寫檢查
-:set spelllang=en_us #設定拼寫語言
+```vim
+:set spell  " 打開拼寫檢查
+:set spelllang=en_us " 設定拼寫語言
 ```
 
 **錯字的配色**
@@ -200,7 +198,7 @@ Vim 7.0 以後有內建的 spell check
 ### 2.8.5 使用縮寫 abbreviations
 
 使用縮寫來減少重複輸入
-```bash
+```vim
 :iabbrev myAddr 32 Lincoln Road, Birmingham B27 6PA, United Kingdom
 ```
 可以在 輸入模式中，輸入 myAddr後，變成之前設定的地址。
@@ -213,7 +211,7 @@ Vim 7.0 以後有內建的 spell check
 
 ### 2.8.6 修改按鍵綁定 Key bindings
 
-```bash
+```vim
 :map <C-s> <esc>:w<cr>
 ```
 把按鍵和指令重新指定。
@@ -352,7 +350,7 @@ Vim的說明文件可以：
 
 像是在 C語言中的 `#include`
 
-```clang
+```c
 #include "example.h"
 ```
 
@@ -383,7 +381,7 @@ Vim的說明文件可以：
 搜索的指令，在Unix系統下有 `grep`，MSWin下有 `find`,`findstr`，
 而在 Vim下，有：
 
-```bash
+```vim
 :vimgrep /pattern/[j][g] file file2... fileN
 ```
 
@@ -398,14 +396,14 @@ Vim的說明文件可以：
 
 ### 3.5.3 在說明文件中搜索
 
-```bash
+```vim
 :helpgrep pattern [@LANG]
-#`@LANG`，可以指定說明文件的語言，例子：
+" @LANG，可以指定說明文件的語言，例子：
 :helpgrep completion@en
 ```
 
 如果是新增加的文件，可以用下面的指令生成文件tags
-```bash
+```vim
 :helptags /path/to/doc
 ```
 
@@ -423,12 +421,12 @@ Vim的說明文件可以：
 
 通常是會在行號前面，用來標記某一行的符號。
 
-```
+```vim
 :sign define name arguments
 ```
 
 定義標記列顏色
-```bash
+```vim
 :highlight SignColumn guibg=darkgrey
 ```
 
@@ -619,13 +617,13 @@ Vim保存了許多資訊，分成幾種：
 ### 4.5.1 簡單會話使用
 
 保存目前視圖、會話
-```
+```vim
 :mkview file
 :mksession file
 
-:set viewdir=$HOME/.vim/views  #設定視圖存放的目錄
+:set viewdir=$HOME/.vim/views  " 設定視圖存放的目錄
 
-載入視圖方式
+" 載入視圖方式
 $vim -S Session.vim
 :source Session.vim
 :loadview View.vim
@@ -669,7 +667,8 @@ pass
 ----------------------
 
 打開遠端的文件
-```
+
+```vim
 :Nread ftp://user@server/path/to/file
 :Nwrite server user passwd path/to/file
 
@@ -714,14 +713,14 @@ Ch5: ADVANCED FORMATTING 進階格式化
 
 在 Markdown、reST中，H1、H2的語法可以寫成：
 
-```
+```markdown
 Level1
 ====== 
 
 Level2
 ------
 
--Level3-
+### Level3
 ```
 
 這邊利用接鍵組合，可以快速在文字下加上相同長度的 `=`，或`-`
@@ -748,7 +747,7 @@ Level2
 
 
 要貼程式碼時，可以用下面的指令，讓貼上的程式碼排版不會跑掉。
-```
+```vim
 :set paste
 :set nopaste
 :set pastetoggle
@@ -761,17 +760,17 @@ Level2
 
 使用 其他程式來排版，像是 Indent,Berkeley Par,Tidy
 
-```
-#設定 indent
+```vim
+" 設定 indent
 :set equalprg=program
 ```
 
 Tidy 是用來排版 XML,HTML 文件的工具。
 
-```
-# XML 文件
+```vim
+" XML 文件
 au FileType xml exe ":silent 1,$!tidy --input-xml true --indent yes -q"
-# HTML 文件
+" HTML 文件
 au FileType html,htm exe ":silent 1,$!tidy --indent yes -q"
 ```
 
@@ -785,7 +784,192 @@ au FileType html,htm exe ":silent 1,$!tidy --indent yes -q"
 Ch6: BASIC VIM SCRIPTING 基本 Vim Scripting
 ===========================================
 
+Vim可以透過 VimScript使用許多功能，且容易分享， 
+而且還可以支援外部語言，如python,ruby,perl,lua...
 
+6.1 語法配色 syntax-color scheme
+--------------------------------
+
+syntax-color scheme會將程式中的 關鍵字以不同的顏色表示，
+
+不僅使程式易讀、而且可以容易發現打錯的字。
+
+語法上色，先要找出關鍵字，然後設置對應的顏色，以下是例子：
+
+```vim
+:syntax match myComments "/\*.*\*/"
+:syntax keyword myVars x y
+:syntax match mySymbols "[{}();=]"
+:syntax keyword myKeywords if return
+:highlight myVars ctermfg=red guifg=red
+:highlight mySymbols ctermfg=blue guifg=blue
+:highlight myKeywords ctermfg=green guifg=green
+:highlight myComments ctermfg=yellow guifg=yellow
+```
+
+
+6.2 區域高亮 Syntax regions 
+---------------------------
+
+像是注釋之類的，一整個區塊要上色的，例子如下：
+
+```vim
+:syntax region myComments start=/\/\*/ end=/\*\//
+```
+
+pass
+
+
+### 6.2.1 Color scheme and syntax coloring 
+
+除了個別指定顏色外，也可以用配色方案中定義的顏色，
+這樣的話，可以隨著 color scheme改變語法顏色。
+
+
+6.3 使用腳本 Using scripts 
+---------------------------
+
+除了自已開發功能外，也可以在網路上找別人寫好的plugin回來安裝
+
+* [Vim.org/Script]
+* [Github/vim-scripts](https://github.com/vim-scripts)
+* [VimAwesome]
+
+### 6.3.1 Script types 
+
+依腳本的功能，有：
+
+* colorscheme, syntax, utility, ftplugin, game, indent, patch...
+
+### 6.3.2 Installing scripts 
+
+安裝 VimScript 的方式，最基本的就是把 `.vim` 丟到 `$HOME/.vim/` 的目錄下，
+
+不過，有些 plugins 檔案太多，於是目前就有一些比較方便的安裝管理方式：
+
+* `.vim`，或是壓縮檔：直接(解壓)放到 `$HOME/.vim/` 目錄下
+* Vimball格式: 是壓縮檔，安裝完 [Vimball] 後， `$vim something.vba` `:so %` 安裝 
+* Vim Plugin Manager: 專門管理plugins的程式，可以直接從 github 上安裝腳本
+    * [pathogen] : 主要是 runtime path manager 
+    * [Vundle] : 滿多人用的，vimrc設定 github名字後，可以直接打 `:PluginInstall` 安裝
+    * [Vim-plug] : 多了on-demand loading ，應該可以加快vim開啟的速度
+    * [談談 vim plugin-manager](https://ssarcandy.tw/2016/08/17/vim-plugin-manager/)
+
+
+
+
+[Vimball]: https://www.vim.org/scripts/script.php?script_id=1502 "vim-based archiver: builds, extracts, and previews"
+[Vundle]: https://github.com/VundleVim/Vundle.vim "Vundle, the plug-in manager for Vim"
+[Vim-plug]: https://github.com/junegunn/vim-plug "Minimalist Vim Plugin Manager"
+[pathogen]: https://github.com/tpope/vim-pathogen "pathogen.vim: manage your runtimepath"
+
+
+### 6.3.3 Uninstalling scripts 
+
+移除的方式就直接和安裝方式相關，
+
+通常是把 `.vim`下的檔案移除，再把 vimrc內的設定去掉。
+
+6.4 腳本開發 Script development 
+--------------------------------
+
+寫自己想要的功能。
+
+在開發腳本時，可能要注意各個Vim的版本，在各平台上可用的功具、函數可能也不用，
+在寫腳本時，要注意，另外一些功能最好也保留可以讓用戶修改的功能，保留彈性。
+
+### 6.4.1 Script writing basics 
+#### Types
+
+VIM下只有字串、和數值
+
+**數值**包括：
+
+* 十進位數字: 1,2,3,...,100
+* 十六進位: 0x01, 0x02,0x64
+* 八進位: 01,02,03,..., 0144
+* 浮點數 float: 3.1415
+
+例：
+
+```vim
+:echo 10 + 0x10 + 010
+```
+
+
+**字串**
+
+* 用單、雙引號包起來的字符: `" " , ' '`
+* \\ 是 Escape character
+* `\n` 是換行(new line)，`\r`是 Return ,`\t`是Tab, `\<CR>是 Return` 其他的符號 參照下面連結
+
+[C語言中的 Escape sequences](https://en.wikipedia.org/wiki/Escape_sequences_in_C)
+
+#### 變數 Variables 
+
+1. 字串 String: 字符的集合
+2. 數值 Number: 前面所述的十、十六、八進位的數字
+3. List: An ordered sequence of items (an ordered array)
+4. 字典 Dictionary: An unordered associative array holding key-value pairs
+5. 函數參照 Funcref: A reference to a function 
+
+定義變數，都是用 `:let` 來賦值的
+
+
+```vim
+:let myvar=somevalue
+
+:let myvalue=100  "數值
+:let mystring="this is a test" " 字串
+```
+
+型值會自動轉換
+```vim
+:let myvar='123'
+echo myvar-23   " 會顯示100
+```
+
+字串經過數值運算會轉成數字。另有，型值強制轉換函數 `string()`
+```vim
+:let myunber=mystring+0
+:let mystring=string(mynumber)
+```
+
+**List**
+
+list是一群變數的集合。
+list[0]是第一個元素。
+```vim
+:let mylistvar1 = [1, 2.7, 0x04, "six", myvar, [1,2,3]]
+```
+**字典 Dictionary**
+
+字典是 key-value pairs，鍵和鍵值的互相參照的序列。
+```vim
+:let mydictvar2 =  {1: "one",2: "two","tens":{0: "ten",1: "eleven"}}
+```
+
+**See Also**:
+
+* [LVtHW:Number](http://learnvimscriptthehardway.stevelosh.com/chapters/25.html)
+* [LVtHW:String](http://learnvimscriptthehardway.stevelosh.com/chapters/26.html)
+* [LVtHW:Lists](http://learnvimscriptthehardway.stevelosh.com/chapters/35.html)
+* [LVtHW:Dictionary](http://learnvimscriptthehardway.stevelosh.com/chapters/37.html)
+* [LVtHW:Function](http://learnvimscriptthehardway.stevelosh.com/chapters/23.html)
+
+#### Conditions 
+#### Working with lists and dictionaries
+#### Loops
+
+**For Loops**
+**While Loops**
+
+
+#### Creating functions 
+#### Variable argument list
+
+6.5 小結 Summary 
+=================
 
 
 
@@ -794,8 +978,34 @@ Ch6: BASIC VIM SCRIPTING 基本 Vim Scripting
 Ch7: EXTENDED VIM SCRIPTING 進階 Vim Scripting
 ==============================================
 
+## 7.1 Script structure 
 
+### 7.1.1 Script header 
+### 7.1.2 Script-loaded check 
+### 7.1.3 Script configuration 
+### 7.1.4 Key mappings 
+### 7.1.5 Functions 
+### 7.1.6 Putting it all together 
 
+## 7.2 Scripting tips 
+### 7.2.1 Gvim or Vim? 
+### 7.2.2 Which operating system? 
+### 7.2.3 Which version of Vim? 
+### 7.2.4 Printing longer lines 
+
+## 7.3 Debugging Vim scripts 
+
+## 7.4 Distributing Vim scripts 
+### 7.4.1 Making Vimballs 
+
+## 7.5 Remember the documentation 
+
+## 7.6 Using external interpreters 
+### 7.6.1 Vim scripting in Perl 
+### 7.6.2 Vim scripting in Python 
+### 7.6.3 Vim scripting in Ruby 
+
+## 7.7 小結 Summary 
 
 
 Appendix A Vim的其他功能
@@ -937,21 +1147,26 @@ See Also:
 
 Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
 
-    This is an H1
-    =============
+```markdown
+This is an H1
+=============
 
-    This is an H2
-    -------------
+This is an H2
+-------------
+```
 
 任何數量的 `=` 和 `-` 都可以有效果。
 
 Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階，例如：
 
-    # This is an H1
+```markdown
+# This is an H1
 
-    ## This is an H2
+## This is an H2
 
-    ###### This is an H6
+###### This is an H6
+```
+
 
 行首的井字數量決定標題的階數，行尾的#可不加
 
@@ -1027,7 +1242,25 @@ var c string
 var d string
 {{< / highlight >}}
 
+```vim
+if foo > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
 
+set autoindent
+
+" switch on highlighting
+function UnComment(fl, ll)
+  while idx >= a:ll
+    let srclines=getline(idx)
+    let dstlines=substitute(srclines, b:comment, "", "")
+    call setline(idx, dstlines)
+  endwhile
+endfunction
+
+let conf = {'command': 'git'}
+```
 
 
 參考連結
@@ -1036,5 +1269,16 @@ var d string
 1. [Hacking Vim 7.2 by Kim Schulz April 2010](https://www.packtpub.com/application-development/hacking-vim-72)
 2. [HackingVim72簡中](https://github.com/wuzhouhui/hacking_vim)
 3. [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
-4. [Vim Awesome](https://vimawesome.com/)
+
+
+
+[Vim.org]: https://www.vim.org/ "Vim.org Official Site"
+[VimAwesome]: https://vimawesome.com/ "VimAwesome: Gether Vim Plugins"
+[Vim.org/Script]: https://www.vim.org/scripts/index.php "Office Site for VimScript"
+
+
+[Learn Vimscript the Hard Way]: http://learnvimscriptthehardway.stevelosh.com/ "a book for users of the Vim editor who want to learn how to customize Vim."
+[A Byte of Vim]: https://vim.swaroopch.com/ "help you to learn how to use the Vim editor (version 7)"
+
+
 

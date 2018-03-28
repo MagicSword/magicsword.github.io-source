@@ -5,6 +5,8 @@ paginate = 10 # Number of posts to show before paginating
 
 theme = "after-dark" # Set default theme
 toc = true
+# pygmentsCodeFences = true
+staticDir = ["static"]
 
 enableRobotsTXT = true # Suggested, enable robots.txt file
 googleAnalytics = "" # Optional, add tracking Id for analytics
@@ -21,7 +23,7 @@ footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
   images = [
     "https://source.unsplash.com/category/technology/2000x1322"
   ] # Suggested, controls default Open Graph images
-  theme_variant = "standard dark" # Optional, for use to overriding default theme
+  theme_variant = "dark-grey" # Optional, for use to overriding default theme
   noindex_kinds = [
     "taxonomy",
     "taxonomyTerm"
