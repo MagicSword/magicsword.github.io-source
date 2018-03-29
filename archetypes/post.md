@@ -130,21 +130,50 @@ That's some text with a footnote.[^1]
 --------
 
 行內和參考
+
+```md
     ![Alt text](/path/to/img.jpg)
 
     ![Alt text](/path/to/img.jpg "Optional title")
+```
+
 
 參考式的圖片語法則長得像這樣：
-
+```md
     ![Alt text][id]
+```
 
 「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
 
+```md
     [id]: url/to/image  "Optional title attribute"
+```
+
+
+### Markdown Anchor
+
+markdown預設 H1,H2的 id就是 text
+
+```html
+<h1 id="MyAnchorName">My Title</h1>
+```
+
+自定錨
+```html
+<a id="MyAnchorName">My Title</a>
+```
+
+連結語法
+
+```html
+<a href="#MyAnchorName">My Content</a>
+```
+
+```markdown
+[create an anchor](#MyAnchorName)
+```
 
 要指定高度的話，也可以用 `<img>`
-
-
 
 程式碼
 --------
