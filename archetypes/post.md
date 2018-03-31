@@ -30,6 +30,14 @@ Before you continue, please take a moment to configure your archetypes.
 刪除線 Strikethrough uses two tildes. ~~Scratch this.~~
 
 
+孔子說：
+
+> 說什麼
+
+定義是：
+
+: 是什麼
+
 
 目錄
 --------
@@ -206,3 +214,4 @@ var d string
 2. [markdown.tw](: )https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
 3. [Archetypes](https://gohugo.io/content-management/archetypes/)
 4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
+5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)

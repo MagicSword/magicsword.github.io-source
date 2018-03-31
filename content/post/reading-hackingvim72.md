@@ -19,6 +19,15 @@ HackingVim72讀後心得。
 
 <!--more-->
 
+Task list: :smile:
+
+- [x] 初稿
+- [ ] 修正
+- [ ] incomplete
+- [ ] completed
+
+
+
 概述
 ====
 
@@ -315,7 +324,7 @@ end of a function)
 
 長行：
 
-> 一行的內容過長，超過VIM視窗範圍的話，程式會自動把超出視窗寬的在下一行顯示。 
+: 一行的內容過長，超過VIM視窗範圍的話，程式會自動把超出視窗寬的在下一行顯示。 
 
 `gk`,`gj` :會以視覺上的行為主而移動。
 
@@ -948,6 +957,57 @@ list[0]是第一個元素。
 ```vim
 :let mydictvar2 =  {1: "one",2: "two","tens":{0: "ten",1: "eleven"}}
 ```
+key不一定是數值，也不需要照順序。
+
+**函式**
+
+```vim
+:let Myfunrefvar= function("Myfunction")
+```
+* 變量 Myfunrefvar , 綁定到 函數 Myfunction
+* 自定變數名以大寫開頭，跟vim內建的變數區別。
+ 
+```vim
+:echo  Myfunrefvar()
+```
+
+* 使用函數時，函數名後加 ()
+
+**刪除函數**
+`delfunction function-name`
+
+
+函數中使用的變數的 **變數可視範圍 Scope**
+變數前的字母，代表變數的作用區域。
+
+<a id="Scope">[Scope]</a>
+
+*  v: Vim predefined global scope
+*  g: Global scope
+*  b: Buffer scope—only available in the buffer where it was defined
+*  t: Tab scope—only available in the Vim tab where it was defined
+*  w: Window scope—only available to the current Vim window (viewport)
+*  l: Function scope—local to the function it is defined in
+*  s: Sourced file scope—local to a Vim script loaded using :source
+*  a: Argument scope—used in arguments for functions
+
+Vim中的注釋是以引號開始 \"
+
+```vim
+let g:sum=0
+function SumNumbers(num1,num2)
+    let l:sum = a:num1+a:num2
+    "check if previous sum was lower than this
+    if g:sum < l:sum
+       let g:sum=l:sum
+    endif
+    return l:sum
+endfunction
+" test code, this will print 7 (value of l:sum)
+echo SumNumbers(3,4)
+" this should also print  7 (value of g:sum)
+echo g:sum
+```
 
 **See Also**:
 
@@ -956,57 +1016,440 @@ list[0]是第一個元素。
 * [LVtHW:Lists](http://learnvimscriptthehardway.stevelosh.com/chapters/35.html)
 * [LVtHW:Dictionary](http://learnvimscriptthehardway.stevelosh.com/chapters/37.html)
 * [LVtHW:Function](http://learnvimscriptthehardway.stevelosh.com/chapters/23.html)
+* [LVtHW:Variable_Scope](http://learnvimscriptthehardway.stevelosh.com/chapters/20.html)
 
 #### Conditions 
+
+If條件式
+
+```vim
+if condition1
+    code-to-execute-if-condition1-is-true
+else
+    if condition2
+      code-to-execute-if-condition2-is-true
+    endif
+endif
+```
+
+**See Also**:
+
+* `:help if` 向下翻，還有 `while, for, try , catch, throw,final`
+* [LVtWY:Conditional](http://learnvimscriptthehardway.stevelosh.com/chapters/21.html)
+
 #### Working with lists and dictionaries
+
+List, Dic 的 [CRUD]
+
+[CRUD」分別為 Create, Read, Update, Delete
+
+**Create**
+```vim
+:let mylist = [1,2,3,"cat", myvar1]
+:let mydicfruit = {'banana':'yellow','apple':'green','orange':'orange'}
+```
+
+**Read**
+
+```vim
+:echo mylist[0],mylist[-1] " 1  , cat (-1是最後的一個值)
+:echo mydicfruit['banana'] " yellow
+" 如果 key是[0-9][a-zA-Z][_]的話
+:echo mydicfruit.banana  " yellow
+```
+
+**Update**
+
+```vim
+:let mylist[0]=99 " 
+:let mydicfruit['banana']='green' " 
+```
+
+**Delete**
+
+```vim
+"用 unlet
+:unlet mylist[0]
+:unlet mydicfruit['banana'] 
+
+" remove()
+:call remove(mylist,2)
+```
+
+**其他操作**
+
+```vim
+:let mylist3 = mylist1 + mylist
+:let mylist4 += [5,6,7,8]
+" extend() 會把兩個 list 相加
+:call extend(mylist3,mylist4)
+:echo myilst3 " mylist3會變成 mylist3 + mylist4, mylist4 不變 
+" add() list4 加進 list3，變成 list3 的一個元素
+:call add(mylist3,mylist4)
+```
+
+**See Also**:
+
+* `:help Dictionary, List`
+* `:help get(), has_key(), items(), keys(), values()`
+* `:help add(), extend(), remove()`
+
+[CRUD]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete "Create, read, update and delete"
+
 #### Loops
 
 **For Loops**
+
+```vim
+for item in mylist
+   call remove(mylist, 0)
+endfor
+```
+
 **While Loops**
 
+```vim
+:let lnum = 1
+:while lnum <= line("$")
+	:call FixLine(lnum)
+	:let lnum = lnum + 1
+:endwhile
+```
+
+**See Also**:
+
+* `:help break` : 離開 loop
+* `:help continue` : 開始下一個loop
 
 #### Creating functions 
+
+<!---
+Markdown沒有適合的語法，這邊用HTML的語法，注釋也是
+-->
+
+<dl>
+  <dt>函數的定義</dt>
+  <dd>
+<pre>
+function Name (arg1, arg2, ... argN) keyword
+	code-to-excute-when-func-call
+endfunction
+</pre>
+</dl>
+
+**keyword**
+
+* dict: 把函數綁定到一個 dict
+* range: 函數的作用範圍
+* 特別的變數: `a:000` 代表所有 argX的集合
+
+**Scope**
+通常函數是local的，可以在函數前加 `g:`以代表全域函數。
+這邊參照 
+
+[Scope變數值域](#Scope)
+
+
 #### Variable argument list
+
+* `:help a:000: 所以參數集合，是 List 型態
+* `a:0`: 參數個數
+* `a:1`: 第一個參數名字，其他以此類推 a:2, a:3...
+
+**See Also**:
+* `:help function-argument`
+* `:help local-variables` 
+* `:help function-lsit` 
+
+
 
 6.5 小結 Summary 
 =================
 
+VimScript 的安裝、移除，管理。
 
-
+基本的資料型態、結構、操作。
 
 
 Ch7: EXTENDED VIM SCRIPTING 進階 Vim Scripting
 ==============================================
 
+本章會介紹 Script的結構，技巧、如何除錯、使用其他外部語言。
+
 ## 7.1 Script structure 
 
 ### 7.1.1 Script header 
+
+腳本前最好加上一個檔頭，說明腳本的一些基本資料。
+例：作者、日期、版本，以及 著作權授權聲明。
+
+* [Open Source License](https://www.gnu.org/licenses/license-list.html)
+* [CreativeCommons](https://creativecommons.org/licenses/?lang=zh_TW)
+
+像是：
+```vim
+" myscript.vim  : Example script to show how a script is structured.
+" Version       : 1.0.5
+" Maintainer    : Who Who <who@what.com>
+" Last modified : 01/01/2007
+" License       : This script is released under the Vim License.
+```
+
 ### 7.1.2 Script-loaded check 
+
+腳本在執行前，最好先檢查腳本是否正常載入，以免發生問題。
+
+ex: 如果腳本載入不成功，會先把函數先缷載，
+把loaded_myscript(是不是要載入腳本)設成true，
+
+```vim
+if exists("loaded_myscript")
+   delfunction MyglobalfunctionB
+   delfunction MyglobalfunctionC
+endif
+let loaded_myscript=1
+```
+
 ### 7.1.3 Script configuration 
+
+腳本的開頭可以放設定，如：顏色，路徑…
+或是一些設定使用者已有原本的設定，
+可以檢查是否已有原本的設定值，再決定要不要取代原本的設定。
+
 ### 7.1.4 Key mappings 
+
+修改按鍵設定，尋找是否有舊的設定，決定取代、或建立新的設定。
+
+這邊有些新的代碼：
+
+* `hasmapto()`: 檢查是否有maping 對映到你的程式
+* `<unique>`: 檢查 mapping是否唯一
+* `<Leader>`: 前導符號，用來開始一些功能的快速鍵。`<Leader>` 會被 全域的 Leader 覆蓋
+* `<Plug>`: 建立一個全域、唯一的Mapping。 這樣就不會和全域變數中的其他函數衝突
+
+
+**See Also**:
+
+* `:help <SID>`: Script ID ?
+* `:help <Plug>`
+* `:help `script-local`
+
+
 ### 7.1.5 Functions 
+
+`s:MyfunctionA` : 前綴的 `s` 把函數的範圍限定在 script 內。
+
+設定函數的正確的Scope，才不會發現意料之外的問題。
+
+
 ### 7.1.6 Putting it all together 
 
+完整腳本的例子：
+
+pass
+
+**See Also**:
+
+* `:help 'write-filetype-plugin'`
+* `:help 'write-compiler-plugin'`
+* `:help 'write-library-script'`
+
 ## 7.2 Scripting tips 
+
 ### 7.2.1 Gvim or Vim? 
+
+Gvim 和 vim有不少不同的地方，如何知道目前執行的是哪一個版本？
+
+```vim
+if has("gui_running")
+	"execute gui-only command here"
+endif
+```
+
+**See Also**:
+
+* `:help 'feature-list`
+
+
 ### 7.2.2 Which operating system? 
+
+作業系統間的不同：路徑、檔案存取權限、…
+
+```vim
+if has("win16") || has("win32") || has("win64")|| has("win95")
+   " do windows things here
+elseif has("unix")
+   " do linux/unix things here
+```
+
+說明文件內的例子：
+
+* macunix                 Macintosh version of Vim, using Unix files (OS-X).
+* unix                    Unix version of Vim.
+* win32                   Win32 version of Vim (MS-Windows 95 and later, 32 or 64 bits)
+* win32unix               Win32 version of Vim, using Unix files (Cygwin)
+
+**See Also**:
+
+* `:help 'feature-list`
+
+
 ### 7.2.3 Which version of Vim? 
+
+Vim版本，ex: Vim 8.0.1626
+
+: 主版號.副版號.補丁編號
+
+```vim
+if v:version >= 702 || v:version == 701 && has("patch123")
+   " code here is only done for version 7.1 with patch 123 
+   " and version 7.2 and above
+endif
+```
+
+`:if has("patch-7.4.123")`
+
 ### 7.2.4 Printing longer lines 
+
+視窗的寬度不少可能超出 80，如果內容太長，
+需要函數偵測、防止出錯。
 
 ## 7.3 Debugging Vim scripts 
 
+`-D` : 例如， `Vim -D something.txt`，可以印出除錯訊息
+
+`:debug` 用來除錯的命令。
+
+基本上就是，設立中錯點、印出數值，除錯。
+
 ## 7.4 Distributing Vim scripts 
+
+依之前的安裝多樣的方式，發布腳本的方向也很多樣。
+
 ### 7.4.1 Making Vimballs 
+
+要確定有安裝 [VimBall] []
+
+制作Vimball 的命令是:
+
+`:[range]MkVimball filename.vba`
+
+中間填入需要檔案的路徑、其他設定後。
+
+`:MkVimball myscript.vba` 打包 
 
 ## 7.5 Remember the documentation 
 
+Vim說明文件的寫法。
+
+腳本寫好了以後，好的說明文件也是很重要的一部分。
+
+Vim的說明文件，基本上是普通的 text，加上一些記號
+
+**First Line**
+`*myscript.txt* Documentation for example script myscript.vim`
+
+文件的第一行，開頭字符號一定要是 `\*` ，兩個`\*`中間是文件檔名， 後面是文件簡述
+
+這邊用書上的例子：
+
+```vim
+*myscript.txt* Documentation for example script myscript.vim
+
+Script : myscript.vim - Example script for vim developers
+Author : Kim Schulz
+Email : <kim@schulz.dk>
+Changed : 01/01/2007
+=============================================================
+											*myscript-intro*
+
+1. Overview
+
+This document gives a short introduction to the example
+script myscript.vim.
+This script is made as an example for vim users on how to
+structure a simple vim plugin script such that it is easy
+to read and figure out.
+The following is covered in this document:
+
+1. Overview 		|myscript-intro|
+2. Mappings 		|myscript-mappings|
+3. Functions 		|myscript-functions|
+4. Todo 			|myscript-todo|
+
+=============================================================
+```
+
+* 首行是特別資訊
+* 檔頭資訊
+* `\*`myscript-intro`\*` 是連結目標，可以用 `:help 'myscript-intro'`跳到這
+* `\|`myscript-intro`\|` 建立類似超連結功能，能快速跳到連結目標
+* `\>` Code here`\<` 中間的是Code
+
+寫好文件後，執行：
+
+```vim
+:helptags docdir
+" docdir 是指向你的文件  `PLUGIN/doc` 
+```
+
+**See Also**:
+
+* `:help 'help-translated'`
+
+
 ## 7.6 Using external interpreters 
+
+輸入 `:version` 和以看到目這的Vim技援的外部功能
+像是這些，+lua,+perl,+python,+python3,+ruby,-tcl
+
+或是輸入指令，是是否有支援。
+`:echo has("perl")`
+
 ### 7.6.1 Vim scripting in Perl 
+
+pass
+
 ### 7.6.2 Vim scripting in Python 
+
+這邊只看一下比較熟的python。
+
+單行
+```vim 
+:python3 print("This is  Python3")
+```
+
+多行
+```vim
+:python3 << *endpattern*
+some statement here
+and here
+*endpattern*
+
+" endpattern : 像是 EOF
+```
+
+Vim 的的 `vim` 模組，可以讀取vim的資訊
+```vim
+import vim
+window = vim.current.window
+window.height = 200
+window.width = 10
+window.cursor = (1,1)
+```
+
+**See Also**:
+
+下面的命令可以用來獲取所有的可用函数列表:
+* `:help 'python-vim'`
+
 ### 7.6.3 Vim scripting in Ruby 
+
+pass
 
 ## 7.7 小結 Summary 
 
+pass
 
 Appendix A Vim的其他功能
 ========================
@@ -1060,209 +1503,6 @@ B.3 Vimrc雲端儲存
 
 
 
-
-
-
-
-
-
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-See Also:
-
-* [powewrline](https://github.com/powerline/powerline)
-* [1]
-
-
-樣式可以用 星號\* 或是 底線\_
-
-斜體 emphasis, aka italics, with *asterisks* or _underscores_.
-粗體 Strong emphasis, aka bold, with **asterisks** or __underscores__.
-合併 Combined emphasis with **asterisks and _underscores_**.
-刪除線 Strikethrough uses two tildes. ~~Scratch this.~~
-
-
-
-第一種是手工的目錄
-
-<h3 id="toc">目錄</h3>
-
-*   [概述](#overview)
-	* [語法](#syntax)	
-	* [目錄](#toc)
-*   [區塊元素](#block)
-	* [標題](#caption)
-	* [連結](#link)
-	* [圖片、其他、youtube](#media)
-	* [程式碼](#code)
-	* [參考連結](#ref)
-
-
-內文地方加上 <h2 id="overview">概述</h2>的連結
-
-第二種是 [After-Dark](https://comfusion.github.io/after-dark/)  內建目錄，在
-標頭上加上  `toc: = true`，程式會把大的標題生成目錄
-
-
-區塊元素
-========
-
- ** List **
-
-* AAA
-	* BBB
-* CCC
-
-
-1. what
-2. some
-3. soso
-
-
-
-
-標題
---------
-
-Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
-
-```markdown
-This is an H1
-=============
-
-This is an H2
--------------
-```
-
-任何數量的 `=` 和 `-` 都可以有效果。
-
-Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階，例如：
-
-```markdown
-# This is an H1
-
-## This is an H2
-
-###### This is an H6
-```
-
-
-行首的井字數量決定標題的階數，行尾的#可不加
-
-
-連結
---------
-Markdown 支援兩種形式的連結語法： *行內*和*參考*兩種形式。
-
-	[連結文字](連結目標)
-
-絕對路徑
-[Google](https://www.google.com)
-
-相對路徑
-[post](/post/)
-
-連結到文章內的id
-[example][id] 或是空白隔著 [2 example] [id]
-
- [id]: http://example.com/  "Optional Title Here"
- [id]: http://example.com/  'Optional Title Here'
- [id]: http://example.com/  (Optional Title Here)
- [id]: <http://example.com/>  "Optional Title Here"
-
-Footer
-
-That's some text with a footnote.[^1]
-
-[^1]: 
-	And that's the footnote.
-
-    That's the second paragraph.
-
-
-圖片、其他、youtube
---------
-
-行內和參考
-    ![Alt text](/path/to/img.jpg)
-
-    ![Alt text](/path/to/img.jpg "Optional title")
-
-參考式的圖片語法則長得像這樣：
-
-    ![Alt text][id]
-
-「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
-
-    [id]: url/to/image  "Optional title attribute"
-
-要指定高度的話，也可以用 `<img>`
-
-
-
-程式碼
---------
-
-分兩個，行內，整段
-行內像文中會提到的func name  `print()` `cast` `def()`
-
-整段用 三個  \`\`\` 包起，第一個後面放語言的名字
-```python
-	for i in 10:
-		print("heloo,world")
-```
-
-如果要的syntax highlighting的話，要用hugo內的 `shortcode`
-
-{{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{< / highlight >}}
-
-```vim
-if foo > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
-set autoindent
-
-" switch on highlighting
-function UnComment(fl, ll)
-  while idx >= a:ll
-    let srclines=getline(idx)
-    let dstlines=substitute(srclines, b:comment, "", "")
-    call setline(idx, dstlines)
-  endwhile
-endfunction
-
-let conf = {'command': 'git'}
-```
-
-
 參考連結
 ========
 
@@ -1271,6 +1511,12 @@ let conf = {'command': 'git'}
 3. [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
 
+**參考書藉**
+
+1. [Learn Vimscript the Hard Way][]
+2. [Learn Vimscript the Hard Way\_簡中][Learn Vimscript the Hard Way_簡中]
+3. [A Byte of Vim][] 
+4. [VimSkill] []
 
 [Vim.org]: https://www.vim.org/ "Vim.org Official Site"
 [VimAwesome]: https://vimawesome.com/ "VimAwesome: Gether Vim Plugins"
@@ -1278,7 +1524,10 @@ let conf = {'command': 'git'}
 
 
 [Learn Vimscript the Hard Way]: http://learnvimscriptthehardway.stevelosh.com/ "a book for users of the Vim editor who want to learn how to customize Vim."
+[Learn Vimscript the Hard Way_簡中]: http://learnvimscriptthehardway.onefloweroneworld.com/ 
+ "Learn vimscript the hard way 簡中"
 [A Byte of Vim]: https://vim.swaroopch.com/ "help you to learn how to use the Vim editor (version 7)"
+[VimSkill]: http://vimskill.readthedocs.io/index.html "VimSkill 簡中文件" 
 
-
+[VimBall]: https://www.vim.org/scripts/script.php?script_id=1502 "vim-based archiver: builds, extracts, and previews "
 

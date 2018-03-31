@@ -4,9 +4,10 @@ title = "After Dark" # Homepage title and page title suffix
 paginate = 10 # Number of posts to show before paginating
 
 theme = "after-dark" # Set default theme
-toc = true
-# pygmentsCodeFences = true
+# pygmentsCodeFences = true  # use pygments for all code block
 staticDir = ["static"]
+enableEmoji= true 
+
 
 enableRobotsTXT = true # Suggested, enable robots.txt file
 googleAnalytics = "" # Optional, add tracking Id for analytics

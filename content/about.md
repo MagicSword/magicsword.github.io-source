@@ -1,31 +1,34 @@
 +++
 title = "About"
-date = "2014-04-09"
+date = "2018-03-30"
 menu = "main"
 weight = 100
 +++
 
-Hugo is a static site engine written in Go.
+個人筆記收集整理
+
+之前用  [Pelican] [Pelican]
+
+後來有用過 [Nikola][Nikola],  [Hexo][Hexo] 
+
+目前用 [Hugo][Hugo]
 
 
-It makes use of a variety of open source projects including:
+[Blog commit log](https://github.com/MagicSword/magicsword.github.io-source/commits/master)
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+----
 
-Learn more and contribute on [GitHub](https://github.com/spf13).
+## Ref:
+1. [StaticGen 靜態網站生成工具比較](https://www.staticgen.com/)
 
-## Setup
 
-Some fun facts about [Hugo](http://gohugo.io/):
+[Pelican]: https://github.com/getpelican/pelican
+[Nikola]: https://github.com/getnikola/nikola
+[Hexo]: https://github.com/hexojs/hexo
+[Hugo]: https://github.com/gohugoio/hugo
+[Jekyll]: http://jekyllrb.com/
 
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
-
-Thanks for reading!
+[HugoSite]: http://gohugo.io/
+[HugoDoc]: https://gohugo.io/documentation/
+[HugoTheme]: https://themes.gohugo.io/
+[After-Dark]: https://themes.gohugo.io/after-dark/
