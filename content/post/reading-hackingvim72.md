@@ -4,7 +4,7 @@ date = 2018-03-24T01:00:23+08:00
 description = "HackingVim72 reading."
 draft = false
 toc = true
-categories = ["technology"]
+categories = ["Technology"]
 tags = ["reading","vim"]
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
@@ -26,7 +26,7 @@ Task list: :smile:
 - [ ] incomplete
 - [ ] completed
 
-
+  
 
 概述
 ====
@@ -1522,7 +1522,8 @@ B.3 Vimrc雲端儲存
 [VimAwesome]: https://vimawesome.com/ "VimAwesome: Gether Vim Plugins"
 [Vim.org/Script]: https://www.vim.org/scripts/index.php "Office Site for VimScript"
 
-
+[VimDoc]: http://vimdoc.sourceforge.net/htmldoc/usr_toc.html "Vim Official Document"
+[VimDoc\_zh-CN]: http://vimcdoc.sourceforge.net/doc/ "Vim Official Doc zh_CN"
 [Learn Vimscript the Hard Way]: http://learnvimscriptthehardway.stevelosh.com/ "a book for users of the Vim editor who want to learn how to customize Vim."
 [Learn Vimscript the Hard Way_簡中]: http://learnvimscriptthehardway.onefloweroneworld.com/ 
  "Learn vimscript the hard way 簡中"

@@ -2,7 +2,7 @@
 title = "Learn Language in Six Months"
 date = 2018-03-30T18:22:45+08:00
 description = "【TED】6個月掌握流利的外語學習方法"
-draft = true
+draft = false
 toc = false
 categories = ["Language"]
 tags = ["TED", "learning"]

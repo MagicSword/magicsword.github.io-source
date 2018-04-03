@@ -3,6 +3,21 @@
 Static site using hugo by golang
 ---
 
+# Editor 
+
+`vim --servername VIM file1.txt`
+`vim --remote-tab file2.txt`
+`:help new-vim-server`
+
+
+#  Naming
+
+分類
+
+reading.learning,technology
+
+
+
 # Hugo 指令
 
 ```bash
