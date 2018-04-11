@@ -1,7 +1,7 @@
 +++
-title = "Reading Hackingvim72"
+title = "Reading HackingVim 7.2"
 date = 2018-03-24T01:00:23+08:00
-description = "HackingVim72 reading."
+description = "Hacking Vim 7.2 reading."
 draft = false
 toc = true
 categories = ["Technology"]
@@ -13,7 +13,7 @@ images = [
 
 
 
-HackingVim72讀後心得。
+Hacking Vim 7.2 讀後心得。
 
 以及一些簡單的筆記、和心得記錄。
 
@@ -26,7 +26,21 @@ Task list: :smile:
 - [ ] incomplete
 - [ ] completed
 
-  
+
+![Hacking Vim 7.2](https://d1ldz4te4covpm.cloudfront.net/sites/default/files/imagecache/ppv4_reader_book_cover/0509_Hacking%20Vim%207.2cov.jpg)
+
+[Hacking Vim 7.2](https://www.packtpub.com/application-development/hacking-vim-72)
+<BR> Ready-to-use hacks with solutions for common situations encountered by users of the Vim editor
+
+- by Kim Schulz (Author)
+- File Size: 1543 KB
+- Print Length: 246 pages
+- Publisher: Packt Publishing (April 29, 2010)
+- Publication Date: April 29, 2010
+- Sold by: Amazon Digital Services LLC
+- Language: English
+
+[Code Files](https://www.packtpub.com/lcode_download/5226)
 
 概述
 ====
@@ -50,13 +64,13 @@ Table of Contents:
 Ch1: GETTING STARTED WITH VIM #簡介
 ===================================
 
-簡介了vim的歷史，從ex,vi,STEVIE,Elvis,nvi,Vim,Vile。
+簡介了 Vim 的歷史，從 ex,vi,STEVIE,Elvis,nvi,Vim,Vile。
 
 不過沒提到較新的 [neovim](https://github.com/neovim/neovim)。
 
 另外一些比較有趣的編輯器:
 
-* Google用 Rust寫的新編輯器 [xi-editor](https://github.com/google/xi-editor)。
+* Google 用 Rust 寫的新編輯器 [xi-editor](https://github.com/google/xi-editor)。
 * Emacs
 * [Sublime-text](https://www.sublimetext.com/3) 
 * Visual Stuido Code

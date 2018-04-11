@@ -2,7 +2,7 @@
 title = "Reading Version Control With Git 2nd"
 date = 2018-04-01T23:06:34+08:00
 description = "Version Control with Git,2nd  簡單心得"
-draft = true
+draft = false
 toc = true
 categories = ["Technology"]
 tags = ["reading", "git"]
@@ -11,10 +11,18 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
-[Version Control with Git, 2nd Edition](http://shop.oreilly.com/product/0636920022862.do)
-簡單的一些筆記。 
+Version Control with Git, 2nd Edition 簡單的一些筆記。 
 
 <!--more-->
+
+Task list: :smile:
+
+- [x] 初稿
+- [ ] 修正
+- [ ] incomplete
+- [ ] completed
+
+
 
 ![Version Control with Git, 2nd Edition](https://covers.oreillystatic.com/images/0636920022862/cat.gif)
 
@@ -28,27 +36,39 @@ images = [
 
 [版本控制使用Git 第二版](https://www.kingstone.com.tw/book/book_page.asp?ActID=alsobuy&LID=se_base001&KMCode=2014713380050#detaildata)
 
-- 編／譯者：吳曜撰
+- 作者：Jon Loeliger 
+- 譯者：吳曜撰
+- 出版社：歐萊禮 
+- 出版日：2013/1/25
+- ISBN：9789862766699
+- 語言：中文繁體
+- 規格：平裝
+- 開數：18.5x23
+- 頁數：452
+- 出版地：台灣
+
+
 
 
 
 [Exercise Codes](https://github.com/terryjbates/version-control-with-git)
 
 
-概述
-========
+# 概述
+
+: 這本書可以幫助您快速搞懂如何使用Git來追蹤、分支、合併並且管理程式碼修訂版本。
+: 藉由詳盡的步驟說明，本書將帶領您了解Git的基礎與進階技術，
+: 充分發揮這套版本控制系統的強大功能。 
 
 
-
-
-## Ch1
+# Ch1 簡介
 
 * Git by Linus Torvalds at 2005，主要是用於 Linux Kernel 開發使用，之前是用  BitKeeper
 * 分散式、分布式、去中心化，代表不需要中央管理，可以各自修改，最後再視需求合併。 
 * Git  主要是由 C 寫成的，速度快
 * 利用 SHA-1 hashes 來辨識檔案 
 
-## Ch2
+# Ch2 安裝 Git
 
 * Debian/Ubuntu: `sudo apt install git`
 * MicroSoft Windows 下有兩種  git@Cygwin, [Git for Windows](http://msysgit.github.io/)@msysGit
@@ -58,7 +78,7 @@ images = [
     * `gitk`
     * `git-gui`
 
-## Ch3     
+# Ch3 準備開始    
 
 **建立程式庫** 
  在想監控的目錄中
@@ -96,6 +116,11 @@ Date:   Sun Apr 1 05:22:46 2018 +0800
 
 commit 後的是 SHA-1 hash，用來分辨各版本間的不同
 
+**See Also**
+
+* [git log – the Good Parts](https://zwischenzugs.com/2018/03/26/git-log-the-good-parts/)
+
+
 `git show`: 看詳細資料
 
 `git diff a-hash b-hash`
@@ -124,7 +149,7 @@ $git commit -m "mv rm some file"
 之後打`git show-graph` 就好
 
 
-## Ch4  基本概念
+# Ch4  基本概念
 
 Git  版本控制的一些概念。 
 
@@ -158,7 +183,7 @@ Git  版本控制的一些概念。
 
  Tags
 
-: Sha1-hashs 難記，  Tags提供一個別名的方式，
+: SHA1-hashs 難記，  Tags提供一個別名的方式，
 : 像是： 8.0.1616-Alpha  這類方便記憶的名字
 
 
@@ -231,13 +256,11 @@ $git init
 **標籤**
 
 標籤(TAG)，基本上就是別名(Alias)的功能
-
-分兩種：
-
+分兩種： 
 1. 輕量 lightweight tag: 不會建立永久物件
 2. 標示 annotated tag: 會建立你提交的物件
 
-## Ch5 檔案管理及索引
+# Ch5 檔案管理及索引
 
 基本上，本章討論檔案管理的一些方法，`create`, `remove`,`move`,`rename`
 
@@ -314,7 +337,7 @@ Git允許你在檔案庫的任何目錄放 `.gitignore` ，各目錄下都可以
 
 pass
 
-## Ch6 提交
+# Ch6 提交
 
 提交：檔案庫間的變動。 
 
@@ -452,7 +475,7 @@ Git 使用 DAG(Directed acyclic graph 有向非循環圖)
 
 `git log -Sstring` 可以找出 string 這個字串是在哪個版本加入的。
 
-## Ch7 分支
+# Ch7 分支
 
 分支是：
 
@@ -555,9 +578,17 @@ $git merge bug/pr-3
 $git branch -d bug/pr-3
 ```
 
-##Ch8 Diffs
+#Ch8 Diffs
 
+Diffs 比較兩個物件的差異。 Unix 有一個指令 `diff` 也是用來比較檔案間的差異。
 
+```bash
+$diff -u old new
+```
+
+* `---`: 減號開頭的是 old 有， new 沒有的內容
+* `+++`: 加號開頭的是 old沒有，new 有的內容
+* `   `: 空白開頭的是 old , new 共有的內容
 
 
 --------
@@ -766,42 +797,5 @@ var d string
 * [Learning Git Branching](https://learngitbranching.js.org/index.html)
 * [新北市教研中心－GIT版本控制](https://legacy.gitbook.com/book/kingofamani/git-teach/details)
 
-作者：Jon Loeliger 追蹤
-譯者：吳曜撰
-出版社：歐萊禮 出版社追蹤  功能說明
-出版日：2013/1/25
-ISBN：9789862766699
-金石碼：2014713380050
-語言：中文繁體
-適讀年齡：全齡適讀
-
-編／譯者：吳曜撰
-語言：中文繁體
-規格：平裝
-分級：普級
-開數：18.5x23
-頁數：452
-出版地：台灣
-
-
-版本控制使用Git 第二版－目錄導覽說明
-
-
-第1 章 簡介 
-第2章 安裝Git 
-第3章 準備開始 
-第4章 基本的Git概念 
-第5章 檔案管理以及索引 
-第6章 送交 
-第7章 分枝 
-第8章 Diffs 
-第9章 合併 
-第10章 修改送交 
-第11章 遠端程式庫 
-第12章 管理程式庫 
-第13章 補綴檔案 
-第14章 掛鉤 
-第15章 結合專案 
-第16章 在Subversion程式庫上使用Git
 
 
