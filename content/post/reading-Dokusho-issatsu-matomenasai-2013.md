@@ -16,6 +16,14 @@ images = [
 
 <!--more-->
 
+Task list: :smile:  
+
+- [x] 初稿 
+- [ ] 修正 
+- [ ] incomplete 
+- [ ] completed 
+
+
 # 資料
 
 ![活用一輩子的讀書筆記術【完全攻略版】2013](http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/073/12/0010731282.jpg&w=85&h=120&v=57f33053)
