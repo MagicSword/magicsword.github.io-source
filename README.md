@@ -2,6 +2,8 @@
 
 new depo test
 
+test for gitkraken
+
 Static site using hugo by golang
 ---
 
