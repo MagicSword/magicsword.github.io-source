@@ -782,7 +782,7 @@ var d string
 --------
 
 1. [圖解Git](https://marklodato.github.io/visual-git-guide/index-zh-tw.html?no-svg)
-
+2. [Introduction to Git and GitHub for Python Developers](https://realpython.com/python-git-github-intro/)
 
 [wikipedia:Git]: https://zh.wikipedia.org/wiki/Git
 [git-it/guide/locale-zhtw.json]: https://github.com/jlord/git-it/blob/master/guide/locale-zhtw.json

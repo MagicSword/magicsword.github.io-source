@@ -11,7 +11,7 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
-[autojump][] 能快速的切換資料匣。
+[autojump][] 能快速的切換資料夾。
 
 
 <!--more-->
