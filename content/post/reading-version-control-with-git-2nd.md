@@ -18,9 +18,9 @@ Version Control with Git, 2nd Edition 簡單的一些筆記。
 Task list: :smile:
 
 - [x] 初稿
-- [ ] 修正
-- [ ] incomplete
-- [ ] completed
+- [ ] 再讀
+- [ ] 筆記
+- [ ] 完成
 
 
 
