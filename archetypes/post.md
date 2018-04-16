@@ -16,11 +16,18 @@ Before you continue, please take a moment to configure your archetypes.
 
 <!--more-->
 
-概述
-========
+Task list: :smile:
 
-語法
---------
+- [x] 初稿
+- [ ] 再讀
+- [ ] 筆記
+- [ ] 完成
+
+
+# 概述
+
+
+# 語法
 
 樣式可以用 星號\* 或是 底線\_
 
@@ -39,8 +46,7 @@ Before you continue, please take a moment to configure your archetypes.
 : 是什麼
 
 
-目錄
---------
+# 目錄
 
 第一種是手工的目錄
 
@@ -207,8 +213,7 @@ var d string
 
 
 
-參考連結
---------
+# 參考連結
 
 1. [Eng-doc](http://daringfireball.net/projects/markdown/syntax)
 2. [markdown.tw](: )https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
