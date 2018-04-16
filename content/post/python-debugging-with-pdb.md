@@ -1,11 +1,11 @@
 +++
 title = "Python Debugging With Pdb"
 date = 2018-04-13T21:03:50+08:00
-description = "Thank you for choosing After Dark."
-draft = true
-toc = false
+description = "pdb 函式庫 使用"
+draft = false
+toc = true
 categories = ["technology"]
-tags = ["hello", "world"]
+tags = ["python", "module","debug"]
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image
@@ -86,17 +86,44 @@ Python 3.7, [PEP 553][] 加入一個比較簡單的除錯內建函式 `breakpoin
 
 # 指令說明
 
-TODO
+## 顯示
+
+* `l(ist) [first[, last]]`：顯示目前執行的到程式碼，沒加參數的話，就是印出單行
+* `ll` long list: 印出多行程式碼，並指出目前執行的到行數
+* `p expression`：印出變數
+* `pp expression`：印出變數， pretty-printed
+* `whatis expression`：印出變數的型態，int or string ...
+* `a(rgs)` ：列出目前函數的所有參數
+
+## 程式流程
+
+* `n (next)`：執行程式下一行
+* `s (step)`：步進程式
+* `c(ont(inue))`：執行到下一個中斷點停止
 
 
+## 監視變數
 
+* `display [expression]`：監視變數，變數有變動時，就會顯示。
+* `undisplay [expression]`：停止監視變數
 
+## 中斷點
 
+* `b(reak) [([filename:]lineno | function) [, condition]]`：設罝中斷點， `b` 不加參數，會列出所有中斷點。
+* `tbreak [([filename:]lineno | function) [, condition]]`：暫時中斷點，執行後，就會被移除。
+* `cl(ear) [filename:lineno | bpnumber [bpnumber ...]]`清除中斷點
+* `disable [bpnumber [bpnumber ...]]`：停用中斷點
+* `enable [bpnumber [bpnumber ...]]`：啟用中斷點
 
+## Python Caller ID
 
+pass
 
-參考連結
---------
+## 結語
+
+[pdb][] 是個很好用的工具，熟練使用的話，能輕易找出程式問題。
+
+# 參考連結
 
 1. [Python Debugging With Pdb](https://realpython.com/python-debugging-pdb/)
 2. [Python初學起步走-Day30 - 除錯(使用pdb)](https://ithelp.ithome.com.tw/articles/10161849)

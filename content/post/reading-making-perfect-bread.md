@@ -2,8 +2,8 @@
 title = "Reading 完美麵包製作書"
 date = 2018-04-16T03:52:12+08:00
 description = "麵包烘焙圖解書"
-draft = true
-toc = false
+draft = false
+toc = true
 categories = ["life"]
 tags = ["reading", "food","bread","cooking"]
 images = [
