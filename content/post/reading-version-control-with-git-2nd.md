@@ -583,12 +583,48 @@ $git branch -d bug/pr-3
 Diffs 比較兩個物件的差異。 Unix 有一個指令 `diff` 也是用來比較檔案間的差異。
 
 ```bash
-$diff -u old new
+$ diff -u initial rewrite
+  --- initial     1867-01-02 11:22:33.000000000 -0500
+  +++ rewrite     2000-01-02 11:23:45.000000000 -0500
+  @@ -1,4 +1,5 @@
+  -Now is the time
+  +Today is the time
+   For all good men
+  +And women
+   To come to the aid
+   Of their country.
 ```
 
-* `---`: 減號開頭的是 old 有， new 沒有的內容
-* `+++`: 加號開頭的是 old沒有，new 有的內容
-* `   `: 空白開頭的是 old , new 共有的內容
+* `-u` : 使用 `-u` 的的顯示格式，`+ , -` 號 
+* `@@`: 這行代表差異的行數，`-1,4` 指 `initial` 的 1,4 行
+* `-`: 減號開頭的是 old 有， new 沒有的內容
+* `+`: 加號開頭的是 old沒有，new 有的內容
+* ` `: 空白開頭的是 old , new 共有的內容
+
+** `git diff` 指令形式 **
+
+* `git diff`: 比較目前目錄狀態，與索引間的差異
+* `git diff commit:`比較 `commit` 與索引
+* `git diff --staged commit`: 比較已進入 `staged`，與 `HEAD`
+* `git diff commit1 commit2`: 比較兩個 commit 的差異
+
+* `staged`: 已 `git add`，還未 `commit`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --------
