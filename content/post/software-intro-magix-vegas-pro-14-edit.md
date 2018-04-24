@@ -2,8 +2,8 @@
 title = "簡介 Magix Vegas Pro 14 Edit"
 date = 2018-04-24T21:21:05+08:00
 description = "Vegas Pro 14 Edit Humble Bundle"
-draft = true
-toc = false
+draft = false
+toc = true
 categories = ["technology"]
 tags = ["software", "Vegas Pro","Video Editing"]
 images = [
