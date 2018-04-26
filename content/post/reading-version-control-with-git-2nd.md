@@ -605,217 +605,66 @@ $ diff -u initial rewrite
 
 * `git diff`: 比較目前目錄狀態，與索引間的差異
 * `git diff commit:`比較 `commit` 與索引
-* `git diff --staged commit`: 比較已進入 `staged`，與 `HEAD`
 * `git diff commit1 commit2`: 比較兩個 commit 的差異
+* `git diff --staged commit`: 比較已進入 `staged`，與 `HEAD`
+* `git diff --cached` 目前狀態，和前一次 commit 比較
+* `staged`: 已 `git add`，還未 `commit`，用這個會比較直覺
 
-* `staged`: 已 `git add`，還未 `commit`
+* `-M`: 偵測改名檔案 
+* `-w`: 忽略空白
+* `--stat`: 多顯示一些統計數據
+* `--color`: 輸出著色
 
+** git diff 範例 **
 
+pass
 
+** git diff 指令、及送交範圍 **
 
+** 使用路徑限制結合 git diff 指令 **
 
+`git diff master~5 master Documentation/git-add.txt`:
 
+: 可以看單一檔案版本間的差異
 
+** 比較 diffs 在 svn 和 git 差別 **
 
+* svn 是 client-server base
+* 會把差異合成一個檔案，傳送給你，
+* git 是運算、檢索出兩個樹狀檔的差別
+* git 使用的方式較快
 
 
+# Ch9 Merge 合併
 
+# Ch10 修改送交
 
+# Ch11 Stash and Reflog
 
+# Ch12 遠端容器
 
+# Ch13 管理容器
 
+# Ch14 Patchs
 
+# Ch15 掛鉤
 
+# Ch16 結合專案
 
---------
+# Ch17 Submodule實務
 
-樣式可以用 星號\* 或是 底線\_
+# Ch18 在 svn 容器上用 git
 
-斜體 emphasis, aka italics, with *asterisks* or _underscores_.
-粗體 Strong emphasis, aka bold, with **asterisks** or __underscores__.
-合併 Combined emphasis with **asterisks and _underscores_**.
-刪除線 Strikethrough uses two tildes. ~~Scratch this.~~
+# Ch19 進階操作
 
+# Ch20 Tips
 
-孔子說：
+# Ch21 Git and Github
 
-> 說什麼
 
-定義是：
 
-: 是什麼
 
-
-目錄
---------
-
-第一種是手工的目錄
-
-<h3 id="toc">目錄</h3>
-
-*   [概述](#overview)
-	* [語法](#syntax)	
-	* [目錄](#toc)
-*   [區塊元素](#block)
-	* [標題](#caption)
-	* [連結](#link)
-	* [圖片、其他、youtube](#media)
-	* [程式碼](#code)
-	* [參考連結](#ref)
-
-
-內文地方加上 <h2 id="overview">概述</h2>的連結
-
-第二種是 [After-Dark](https://comfusion.github.io/after-dark/)  內建目錄，在
-標頭上加上  `toc: = true`，程式會把大的標題生成目錄
-
-
-區塊元素
-========
-
- ** List **
-
-* AAA
-	* BBB
-* CCC
-
-
-1. what
-2. some
-3. soso
-
-
-
-
-標題
---------
-
-Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
-
-    This is an H1
-    =============
-
-    This is an H2
-    -------------
-
-任何數量的 `=` 和 `-` 都可以有效果。
-
-Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階，例如：
-
-    # This is an H1
-
-    ## This is an H2
-
-    ###### This is an H6
-
-行首的井字數量決定標題的階數，行尾的#可不加
-
-
-連結
---------
-Markdown 支援兩種形式的連結語法： *行內*和*參考*兩種形式。
-
-	[連結文字](連結目標)
-
-絕對路徑
-[Google](https://www.google.com)
-
-相對路徑
-[post](/post/)
-
-連結到文章內的id
-[example][id] 或是空白隔著 [2 example] [id]
-
- [id]: http://example.com/  "Optional Title Here"
- [id]: http://example.com/  'Optional Title Here'
- [id]: http://example.com/  (Optional Title Here)
- [id]: <http://example.com/>  "Optional Title Here"
-
-Footer
-
-That's some text with a footnote.[^1]
-
-[^1]: 
-	And that's the footnote.
-
-    That's the second paragraph.
-
-
-圖片、其他、youtube
---------
-
-行內和參考
-
-```md
-    ![Alt text](/path/to/img.jpg)
-
-    ![Alt text](/path/to/img.jpg "Optional title")
-```
-
-
-參考式的圖片語法則長得像這樣：
-```md
-    ![Alt text][id]
-```
-
-「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
-
-```md
-    [id]: url/to/image  "Optional title attribute"
-```
-
-
-### Markdown Anchor
-
-markdown預設 H1,H2的 id就是 text
-
-```html
-<h1 id="MyAnchorName">My Title</h1>
-```
-
-自定錨
-```html
-<a id="MyAnchorName">My Title</a>
-```
-
-連結語法
-
-```html
-<a href="#MyAnchorName">My Content</a>
-```
-
-```markdown
-[create an anchor](#MyAnchorName)
-```
-
-要指定高度的話，也可以用 `<img>`
-
-程式碼
---------
-
- 分兩個，行內，整段
-行內像文中會提到的func name  `print()` `cast` `def()`
-
-整段用 三個  \`\`\` 包起，第一個後面放語言的名字
-```python
-	for i in 10:
-		print("heloo,world")
-```
-
-如果要的syntax highlighting的話，要用hugo內的 `shortcode`
-
-{{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{< / highlight >}}
-
-
-
-
-參考連結
---------
+# 參考連結
 
 1. [圖解Git](https://marklodato.github.io/visual-git-guide/index-zh-tw.html?no-svg)
 2. [Introduction to Git and GitHub for Python Developers](https://realpython.com/python-git-github-intro/)

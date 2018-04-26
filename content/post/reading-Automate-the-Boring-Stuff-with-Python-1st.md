@@ -104,7 +104,7 @@ PART 1 Python 程式設計基礎
 # [chapter 05 字典與結構化資料](05_dics_structdata)
 # [chapter 06 字串的操作](06_strings)
 
-PART 2 自動化專題實作
+PART 2 自動化專題實作Modify 18_keyboard_mouse.md 初稿
 # [chapter 07 使用正規表示式進行模式比對](07_regex)
 
 

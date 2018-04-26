@@ -305,14 +305,15 @@ pass
 
 
 Q: 1. How can you trigger PyAutoGUI’s fail safe to stop a program?
-: A: `pyautogui.FAILSAFE = True`, 打開安全防護功能。
+: A: 把游標移出邊界。
+: `pyautogui.FAILSAFE = True`, 打開安全防護功能。
 滑鼠在移出畫面邊界時，會自動停止，會觸發 `pyautogui.FailSageExcetion`
 
 Q: 2. What function returns the current resolution()?
-: A: `pyautogui.size()` 傳回 xpos,ypos
+: A: `pyautogui.size()` 傳回 寬、高
 
 Q: 3. What function returns the coordinates for the mouse cursor’s current position?
-: A: `pyautogui.position()`
+: A: `pyautogui.position()` ，x,y 座標
 
 Q: 4. What is the difference between pyautogui.moveTo() and pyautogui.moveRel()?
 : A: 絕對座標，相對移動
@@ -321,16 +322,17 @@ Q: 5. What functions can be used to drag the mouse?
 : A: `pyautogui.dragTo()`, `pyautogui.dragRel()`
 
 Q: 6. What function call will type out the characters of "Hello world!"?
-: A: `pyautogui.typewriter()`
+: A: `pyautogui.typewriter("Hellow World!")`
 
 Q: 7. How can you do keypresses for special keys such as the keyboard’s left arrow key?
 : A: `pyautogui.press(`left`)`
 
 Q: 8. How can you save the current contents of the screen to an image file named screenshot.png?
-: A: `im = pyaytogui.screenshot()`
+: A: `im = pyaytogui.screenshot(`screenshot.png`)`
 
 Q: 9. What code would set a two second pause after every PyAutoGUI function call?
 : A: `time.sleep(2)`
+: 錯，是用  `pyautogui.PAUSE= 2`
 
 # 實作
 
