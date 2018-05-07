@@ -13,6 +13,9 @@ Static site using hugo by golang
 `vim --remote-tab file2.txt`
 `:help new-vim-server`
 
+# File Naming
+
+檔名的話，[分類]Title.md
 
 #  Naming
 
