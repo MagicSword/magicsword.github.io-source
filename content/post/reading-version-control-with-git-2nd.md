@@ -414,6 +414,7 @@ MERGE\_HEAD
 * `master^2` 或 `master~2` 指的就是倒數第三個，
 
 常用指令
+
 * `git rev-parse master~3^2^2`
 * `git show-branch --more=35|tail -10`
 
@@ -578,7 +579,7 @@ $git merge bug/pr-3
 $git branch -d bug/pr-3
 ```
 
-#Ch8 Diffs
+# Ch8 Diffs
 
 Diffs 比較兩個物件的差異。 Unix 有一個指令 `diff` 也是用來比較檔案間的差異。
 
@@ -601,7 +602,7 @@ $ diff -u initial rewrite
 * `+`: 加號開頭的是 old沒有，new 有的內容
 * ` `: 空白開頭的是 old , new 共有的內容
 
-** `git diff` 指令形式 **
+**`git diff` 指令形式**
 
 * `git diff`: 比較目前目錄狀態，與索引間的差異
 * `git diff commit:`比較 `commit` 與索引
@@ -615,19 +616,19 @@ $ diff -u initial rewrite
 * `--stat`: 多顯示一些統計數據
 * `--color`: 輸出著色
 
-** git diff 範例 **
+**git diff 範例**
 
 pass
 
-** git diff 指令、及送交範圍 **
+**git diff 指令、及送交範圍**
 
-** 使用路徑限制結合 git diff 指令 **
+**使用路徑限制結合 git diff 指令**
 
 `git diff master~5 master Documentation/git-add.txt`:
 
 : 可以看單一檔案版本間的差異
 
-** 比較 diffs 在 svn 和 git 差別 **
+**比較 diffs 在 svn 和 git 差別**
 
 * svn 是 client-server base
 * 會把差異合成一個檔案，傳送給你，
@@ -636,6 +637,73 @@ pass
 
 
 # Ch9 Merge 合併
+
+多人合作時，要將各別的成果整合時，就需要合併(Merge)資料。
+合併時，其本上是把兩個分支整合成一個新的 commit 來表示這個合併後的新狀態。
+有衝突的部分，會在 Index 上標示 unmerged ，讓使用者決定。 
+
+**合併兩個分支**
+
+* `git merge alternate`: 將 alternate 合併到目前分支
+
+**有衝突的合併**
+
+如果在合併的過程中，有衝突的檔案，會將兩個版本的內容放在檔案中，
+自行解決衝突的檔案。
+
+**處理合併衝突**
+
+**找到衝突的檔案**
+
+* `git status`, `git ls-files -u` 可以用來顯示工作目錄中尚未被合併的檔案集合。
+
+**檢查衝突**
+
+`git log --merge --left-right -p`
+
+* `--merge` 只顯示跟衝突檔案相關的提交
+* `--left-right` 當次的提交是從左邊來的，(--ours 我們起始的版本，--theirs 別人合併進來的版本)
+* `-p` 顯示訊息跟修正檔案之間跟每個提交的關係
+
+**Git 如何追蹤衝突**
+
+* `.git/MERGE\_HEAD` : 放了要合併的提交的 SHA1
+* `git/MERGE\_MSG` : 放了解決衝突後提交的預設合併訊息
+* Git的索引包含了衝突檔案的三個拷貝，分支起點版本，我們的，他們的，編號分別為1,2,3
+* 衝突的版本存在工作目錄的檔案中，沒有存在索引中。你用 `git diff` 時，一定是比較索引、和工作目錄檔案 
+
+**放棄或是重新合併**
+
+* `git reset --hard HEAD` : 可以回復到執行 `git merge` 之前
+
+**合併的策略**
+
+之前的例子是簡單的兩方合併，若是三方以上的情形的話。
+
+已是最新的
+: 合併時，會以最新的提交為主來合併
+
+快轉(fast-forward)
+: 快轉合併 發生在你目前的分支已有其他分支的內容時，只要移動 HEAD 到最新的提交就好。
+
+**正常的合併**
+
+解決(Resolve)
+: 兩個親屬分支，依兩方特徵，產生一個新的子分支
+
+遞迴(Recursive)
+: 解決多分支合併的策略，一次處理兩個分支，進而將多分支簡化成兩分支的情形
+
+章魚(Octopus)
+: 設計用來處理多分支的狀況，多次呼叫 遞迴策略，每次處理一目標分支，但是遇到衝突時，還是要人工解決。
+
+**特別的合併**
+
+我們的(ours)
+: 我們的
+
+子樹(subtree)
+: 子樹
 
 # Ch10 修改送交
 

@@ -5,7 +5,7 @@ description = "【TED】6個月掌握流利的外語學習方法"
 draft = false
 toc = false
 categories = ["Language"]
-tags = ["TED", "learning"]
+tags = ["reading","video","TED", "learning"]
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image
