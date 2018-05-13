@@ -2,7 +2,7 @@
 title = "Reading 7 Habits for Effective Text Editing 2.0"
 date = 2018-05-10T15:17:20+08:00
 description = "Note for Video 7 Habits For Effective Text Editing 2.0"
-draft = true
+draft = false
 toc = true
 categories = ["technology"]
 tags = ["reading", "video","vim"]
@@ -13,8 +13,8 @@ images = [
 
 [7 Habits For Effective Text Editing 2.0 - YouTube](https://www.youtube.com/watch?v=p6K4iIMlouI)
 
-by [Bram Moolenaar][] , original author of  Vim.
-<BR> [Slide Here](http://www.moolenaar.net/habits_2007.pdf)
+by [Bram Moolenaar][] , Vim的作者談有效率的編輯 , [Slide Here](http://www.moolenaar.net/habits_2007.pdf)
+
 <!--more-->
 
 Task list: :smile:
@@ -38,33 +38,75 @@ Task list: :smile:
 ###  The Tool
 
 * 好的工具是你能熟練使用的程式，能發揮它 100% 的功用比什麼都重要。
+* Don't try to learn everything , just learn what you need.
 
 ### 三個基本步驟
 
-1. 找到沒效率的地方
-2. 研究快捷的方法
-3. 養成習慣
+發現問題之後，精進的頻驟可以是：
 
+1. Find inefficiency 找到沒效率的地方
+2. Find a quicker way 研究快捷的方法
+3. Make it a habbit 養成習慣
 
+**See Also**
 
-
-
-
-
+1. “The 7 habits of highly effective people” - Stephen R. Covey
 
 ### Habit 1: Moving around quickly
 
+search
+
+* 設定 `set hlsearch` : 找到的關鍵字高亮度
+* `*` : 直接找遊標上的字
+* 設定 Folding 可以把用不到的資訊先隱藏起來
+
 ### Habit 2: Don't type it twice
+
+auto complete:
+
+* `Ctrl-N,Ctrl-P` : 可以快速完成有輸入過的字
+* `omni-colpletion` : complete from language references
+
 
 ### Habit 3: Fix it when it's wrong
 
+自動修正，spell correction:
+
+* 打開拼字檢查
+* `iabbrev teh the`: 可以把容易打錯的，設為自動修正
+
+
 ### Habit 4: A file seldom comes alone
+
+使用 ctags 之類的軟體，查語言的manual
+
+* `quickfix` window
+* `gf` Goto file
+* `[I` to search keyword in include files
+
 
 ### Habit 5: Let's work together
 
+整合功能程式?  email, office , pdf  document
+
 ### Habit 6: Text is structured
 
+寫簡單的程式，整理有規則的文件，如： log
+
 ### Habit 7: Sharpen the saw
+
+* 時常整理你常用到的指令
+* Learn from what you did 從作中學
+* 其他內容：
+    * folding
+    * automatic indenting
+    * Plugins (generic and filetype specific)
+    * edit files over a network
+    * advanced scripting
+    
+
+
+ 
 
 
 
@@ -82,197 +124,21 @@ Step 3: Make it a habit
 - do it
 - keep on improving
 
+# And
 
+* 不要只用最基本的功能，也不需要細讀使用手冊，
+* 能在日常的使用中，熟悉編輯器的功能最好。
+* Don't try to learn everything , just learn what you need.
 
+# Q and A
 
-
-
-樣式可以用 星號\* 或是 底線\_
-
-斜體 emphasis, aka italics, with *asterisks* or _underscores_.
-粗體 Strong emphasis, aka bold, with **asterisks** or __underscores__.
-合併 Combined emphasis with **asterisks and _underscores_**.
-刪除線 Strikethrough uses two tildes. ~~Scratch this.~~
-
-
-孔子說：
-
-> 說什麼
-
-定義是：
-
-: 是什麼
-
-
-# 目錄
-
-第一種是手工的目錄
-
-<h3 id="toc">目錄</h3>
-
-*   [概述](#overview)
-	* [語法](#syntax)	
-	* [目錄](#toc)
-*   [區塊元素](#block)
-	* [標題](#caption)
-	* [連結](#link)
-	* [圖片、其他、youtube](#media)
-	* [程式碼](#code)
-	* [參考連結](#ref)
-
-
-內文地方加上 <h2 id="overview">概述</h2>的連結
-
-第二種是 [After-Dark](https://comfusion.github.io/after-dark/)  內建目錄，在
-標頭上加上  `toc: = true`，程式會把大的標題生成目錄
-
-
-區塊元素
-========
-
- ** List **
-
-* AAA
-	* BBB
-* CCC
-
-
-1. what
-2. some
-3. soso
-
-
-
-
-標題
---------
-
-Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
-
-    This is an H1
-    =============
-
-    This is an H2
-    -------------
-
-任何數量的 `=` 和 `-` 都可以有效果。
-
-Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階，例如：
-
-    # This is an H1
-
-    ## This is an H2
-
-    ###### This is an H6
-
-行首的井字數量決定標題的階數，行尾的#可不加
-
-
-連結
---------
-Markdown 支援兩種形式的連結語法： *行內*和*參考*兩種形式。
-
-	[連結文字](連結目標)
-
-絕對路徑
-[Google](https://www.google.com)
-
-相對路徑
-[post](/post/)
-
-連結到文章內的id
-[example][id] 或是空白隔著 [2 example] [id]
-
- [id]: http://example.com/  "Optional Title Here"
- [id]: http://example.com/  'Optional Title Here'
- [id]: http://example.com/  (Optional Title Here)
- [id]: <http://example.com/>  "Optional Title Here"
-
-Footer
-
-That's some text with a footnote.[^1]
-
-[^1]: 
-	And that's the footnote.
-
-    That's the second paragraph.
-
-
-圖片、其他、youtube
---------
-
-行內和參考
-
-```md
-    ![Alt text](/path/to/img.jpg)
-
-    ![Alt text](/path/to/img.jpg "Optional title")
-```
-
-
-參考式的圖片語法則長得像這樣：
-```md
-    ![Alt text][id]
-```
-
-「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
-
-```md
-    [id]: url/to/image  "Optional title attribute"
-```
-
-
-### Markdown Anchor
-
-markdown預設 H1,H2的 id就是 text
-
-```html
-<h1 id="MyAnchorName">My Title</h1>
-```
-
-自定錨
-```html
-<a id="MyAnchorName">My Title</a>
-```
-
-連結語法
-
-```html
-<a href="#MyAnchorName">My Content</a>
-```
-
-```markdown
-[create an anchor](#MyAnchorName)
-```
-
-要指定高度的話，也可以用 `<img>`
-
-程式碼
---------
-
-分兩個，行內，整段
-行內像文中會提到的func name  `print()` `cast` `def()`
-
-整段用 三個  \`\`\` 包起，第一個後面放語言的名字
-```python
-	for i in 10:
-		print("heloo,world")
-```
-
-如果要的syntax highlighting的話，要用hugo內的 `shortcode`
-
-{{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{< / highlight >}}
-
+pass
 
 
 
 # 參考連結
 
-1. [Eng-doc](http://daringfireball.net/projects/markdown/syntax)
+1. [7 Habits For Effective Text Editing 2.0 - YouTube](https://www.youtube.com/watch?v=p6K4iIMlouI)
+
 
 [Bram Moolenaar]: http://www.moolenaar.net/
