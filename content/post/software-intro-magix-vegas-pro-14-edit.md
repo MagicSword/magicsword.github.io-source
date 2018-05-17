@@ -5,7 +5,7 @@ description = "Vegas Pro 14 Edit Humble Bundle"
 draft = false
 toc = true
 categories = ["technology"]
-tags = ["software", "Vegas Pro","Video Editing"]
+tags = ["software", "Vegas Pro","Video Editing","Humble Bundle"]
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image

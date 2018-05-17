@@ -705,6 +705,8 @@ pass
 子樹(subtree)
 : 子樹
 
+**翻譯有點…先pass**
+
 # Ch10 修改送交
 
 # Ch11 Stash and Reflog
@@ -729,8 +731,32 @@ pass
 
 # Ch21 Git and Github
 
+[Github][] 是有 社交功能的 原始碼分享網站。
 
+* 有四種帳號形態：個人免費，個人收費，組織免費，組織收費
+* 建立遠端的容器後，用 `git remote add URL` ，兩邊連結。
+* 上傳使用： `git push -u origin master
 
+**Github 的 Watch**`
+
+* `Watch` 就像 twitter 的 follow ，會在主頁出現追蹤專案的動態
+* `Fork` 專案複製，想將專案往不同的方向發展。
+* `Pull Request` 對原專案的修改，發出請求，合併至原專案。 
+* `Star` Favorite 的標記
+* `Wiki` 各專案的維基，用來寫文件。
+* `Github Page` 可用來放靜態 HTML
+* `GIST` 用來貼短篇文章的功能, Pastebin
+
+其他類似 Github 的網站
+
+* SourceForge,Google Code
+* Bitbucket(Mercirial,hg)
+
+自架 Git
+
+* [Gitlab](https://about.gitlab.com/)
+* [Gitea](https://github.com/go-gitea/gitea)
+* [Gogs](https://github.com/gogits/gogs)
 -----------------------------------------------------
 
 Depository n. 貯藏所
@@ -755,7 +781,7 @@ ISBN：9789862766699
 語言：中文繁體
 規格：平裝
 分級：普級
-開數：18.5*23
+開數：18.5x23
 頁數：452
 出版地：台灣
 
@@ -833,4 +859,4 @@ he))
 * [新北市教研中心－GIT版本控制](https://legacy.gitbook.com/book/kingofamani/git-teach/details)
 
 
-
+[Github]: https://github.com
