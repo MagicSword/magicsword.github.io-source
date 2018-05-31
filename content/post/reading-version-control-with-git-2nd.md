@@ -709,6 +709,22 @@ pass
 
 # Ch10 修改送交
 
+`Commit` 記錄著歷史、和變更記錄。 但是已送交的記錄也是有些工具可以修改。
+
+要注意的是，如果是會出現在別人容器的送交，記得不要修改，以免產生問題。
+
+## 使用 git reset 指令
+
+`git reset --soft commit`
+
+* `git reset` 的指令可以讓目前工作目錄的 HEAD, Index, 工作目錄 回到之前的某的狀態。
+
+|選項 | HEAD | 索引 | 工作目錄 |
+|-----|------|------|----------|
+|`--soft` | Yes |No| No|
+|`--mixed` | Yes| Yes |No|
+|`--hard` | Yes | Yes | Yes|
+
 # Ch11 Stash and Reflog
 
 # Ch12 遠端容器
@@ -757,6 +773,12 @@ pass
 * [Gitlab](https://about.gitlab.com/)
 * [Gitea](https://github.com/go-gitea/gitea)
 * [Gogs](https://github.com/gogits/gogs)
+
+
+
+
+
+
 -----------------------------------------------------
 
 Depository n. 貯藏所

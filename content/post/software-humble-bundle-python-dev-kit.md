@@ -2,7 +2,7 @@
 title = "Software Humble Bundle Python Dev Kit"
 date = 2018-05-17T14:05:07+08:00
 description = "Humble Bundle Python Dev Kit"
-draft = true
+draft = false
 toc = false
 categories = ["programming"]
 tags = ["software", "python","Humble Bundle"]

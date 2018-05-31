@@ -147,13 +147,5 @@ https://gohugo.io/tools/syntax-highlighting/#pygments
 
 1. [用 Hugo 搭建个人 Blog](https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/)
 2. [使用Hugo搭建静态站点](http://tonybai.com/2015/09/23/intro-of-gohugo/)
-
-
-
-
-
-
-
-
-
+3. [Hugo 中文](http://www.gohugo.org/)
 
