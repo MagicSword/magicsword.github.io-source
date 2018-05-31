@@ -1,0 +1,3 @@
+[submodule "themes/after-dark"]
+	path = themes/after-dark
+	url = git@github.com:MagicSword/after-dark.git
