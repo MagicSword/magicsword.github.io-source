@@ -1,62 +1,84 @@
-baseurl = "https://magicsword.github.io/" # Controls base URL
-languageCode = "zh-Hant-TW" # Controls site language
-title = "After Dark" # Homepage title and page title suffix
-paginate = 10 # Number of posts to show before paginating
+baseURL = "/"
 
-theme = "after-dark" # Set default theme
-# pygmentsCodeFences = true  # use pygments for all code block
-staticDir = ["static"]
-enableEmoji= true 
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+title = "After-Dark"
+theme = "docdock"
+themesdir = "themes"
+pygmentsCodeFences = true
+pygmentsStyle = "monokailight"
 
-
-enableRobotsTXT = true # Suggested, enable robots.txt file
-googleAnalytics = "" # Optional, add tracking Id for analytics
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir= false
+enableMissingTranslationPlaceholders = false
 disqusShortname = "neromiller-github" # Optional, add Disqus shortname for comments
-SectionPagesMenu = "main" # Enable menu system for lazy bloggers
-footnoteReturnLinkContents = "↩" # Provides a nicer footnote return link
+staticDir = ["static"]
+enableEmoji= true
+
+
+# [Languages]
+# [Languages.en]
+# title = "After-Dark"
+# weight = 1
+# languageName = "English"
+# 
+# [Languages.fr]
+# title = "After-Dark"
+# weight = 2
+# languageName = "Français"
+
+
+
 
 [params]
-  description = "programming, writing" # Suggested, controls default description meta
-  author = "Nero" # Optional, controls author name display on posts
-  hide_author = false # Optional, set true to hide author name on posts
-  show_menu = true # Optional, set true to enable section menu
-  powered_by = true # Optional, set false to disable credits
-  images = [
-    "https://source.unsplash.com/category/technology/2000x1322"
-  ] # Suggested, controls default Open Graph images
-  theme_variant = "dark-grey" # Optional, for use to overriding default theme
-  noindex_kinds = [
-    "taxonomy",
-    "taxonomyTerm"
-  ]
+editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content/"
+showVisitedLinks = true # default is false
+themeStyle = "original" # "original" or "flex" # default "flex"
+themeVariant = "blue" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
+disableHomeIcon = false # default is false
+disableSearch = false # default is false
+disableNavChevron = false # set true to hide next/prev chevron, default is false
+highlightClientSide = true # set true to use highlight.pack.js instead of the default hugo chroma highlighter
+menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
+enableGitInfo = true
 
 [taxonomies]
-  tag = "tags"
   category = "categories"
+  tag = "tags"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
 
 
-[[menu.main]]
-  name = "Home"
-  weight = 1
-  identifier = "home"
-  url = "/"
-[[menu.main]]
-  name = "Posts"
-  weight = 2
-  identifier = "post"
-  url = "/post/"
-[[menu.main]]
-  name = "Articles"
-  weight = 3
-  identifier = "articles"
-  url = "/articles/"
-[[menu.main]]
-  name = "Tags"
-  weight = 4
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 5
-  identifier = "categories"
-  url = "/categories/"
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-tags'></i> <label>Tags</label>"
+url = "/tags/"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-folder-open'></i> <label>Categories</label>"
+url = "/categories/"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
+url = "/about/"
+weight = 30
+
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 40
+
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+identifier = "ds"
+url = "https://github.com/MagicSword/"
+weight = 50
+
+

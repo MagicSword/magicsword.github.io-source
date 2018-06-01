@@ -16,6 +16,18 @@ weight = 100
 
 [Blog commit log](https://github.com/MagicSword/magicsword.github.io-source/commits/master)
 
+[Netlify Hugo: After-dark](https://after-dark.netlify.com)
+
+----
+
+# LOG
+
+20180601
+
+- 加入 Netlify.com 的設定 netlify.toml，[hugo設定](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/)
+- 把 theme 改成用 submodule , `git submodule add git://github.com/chneukirchen/rack.git rack`
+
+
 ----
 
 ## Ref:

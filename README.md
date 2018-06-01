@@ -1,11 +1,8 @@
 # README.md
 
-new depo test
 
-test for gitkraken
+# Static site using hugo by golang
 
-Static site using hugo by golang
----
 
 # Editor 
 
