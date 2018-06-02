@@ -26,6 +26,7 @@ weight = 100
 
 - 加入 Netlify.com 的設定 netlify.toml，[hugo設定](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/)
 - 把 theme 改成用 submodule , `git submodule add git://github.com/chneukirchen/rack.git rack`
+- 把 theme 換成  [docdock][]
 
 
 ----
@@ -44,3 +45,4 @@ weight = 100
 [HugoDoc]: https://gohugo.io/documentation/
 [HugoTheme]: https://themes.gohugo.io/
 [After-Dark]: https://themes.gohugo.io/after-dark/
+[docdock]: https://docdock.netlify.com/ 

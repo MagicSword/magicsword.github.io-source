@@ -57,10 +57,10 @@ Task list: :smile:
 * Cmder
 * TotalCommander 9.12
 * PCMan
-* 文字編輯器: GVIM 8.0
+* 文字編輯器: GVim 8.0
 * 編輯器: PyCharm,Visual Studio Code
 * 影片編輯: gimp
-* 影像編輯: Vegas Pro Edit
+* 影像編輯: Magix Vegas Pro Edit 14
 * Password Manager: Keepass
 * VirtualBox
     * WinXP,Win10

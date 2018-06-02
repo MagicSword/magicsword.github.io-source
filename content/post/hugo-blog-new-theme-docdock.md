@@ -2,10 +2,13 @@
 title = "Hugo Blog New Theme Docdock"
 date = 2018-06-01T14:53:57+08:00
 description = "Change blog new theme docdock"
-draft = true
+draft = false
 toc = false
 categories = ["technology"]
-tags = ["blog", "hugo",""]
+tags = ["blog", "hugo","theme"]
+pre ="<i class='fa fa-file'></i> "
+type="page" # set "slide" to display it fullscreen with reveal.js
+head ="<label>Hello</label> "
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image
@@ -55,15 +58,29 @@ Task list: :smile:
 - 雙語？之後試
 - emoji ok
 
+## 已有功能
+
+- [v] syntax highlight.js
+- [v] emoji
+- [v] mermaid flow chart
+- [v] 直接連到 github 修改原始檔
+- [v] Pic logo + [Unsplash Source](https://source.unsplash.com)  [Logo](https://docdock.netlify.com/content-organisation/logo/)
+- [v] search
+
+
 ## 缺少功能？
 
 * disqus
 * 字數計算
 * 相關內容, 文章
 * tag , categories
-* 讀完時間 
+* 讀完時間 reading-time
+* 改 dark theme
 
-# 功能
+# 功能範例
+
+
+[highlight.js DEMO](https://highlightjs.org/static/demo/)
 
 ## Shortcode
 
@@ -175,6 +192,6 @@ An warning disclaimer
 1. [mermaid][]
 
 
-[docdock]: "https://github.com/vjeantet/hugo-theme-docdock"
-[hugo-theme-learn]: "https://github.com/matcornic/hugo-theme-learn"
-[mermaid]: "https://mermaidjs.github.io/" '流程圖.js'
+[docdock]: https://github.com/vjeantet/hugo-theme-docdock
+[hugo-theme-learn]: https://github.com/matcornic/hugo-theme-learn
+[mermaid]: https://mermaidjs.github.io/ '流程圖.js'

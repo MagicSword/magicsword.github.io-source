@@ -1,13 +1,15 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
-description = "Thank you for choosing After Dark."
+description = "Description"
 draft = true
-toc = false
+toc = true  # by after-dark
 categories = ["technology"]
 tags = ["hello", "world"]
+pre ="<i class='fa fa-file'></i> "
+type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
-  "https://source.unsplash.com/category/technology/1600x900"
+  "https://source.unsplash.com/category/technology/"
 ] # overrides the site-wide open graph image
 +++
 
@@ -25,6 +27,111 @@ Task list: :smile:
 
 
 # 概述
+
+
+# Docdock
+
+### Alert
+
+{{% alert theme="info" %}}**this** is a text{{% /alert %}}
+{{% alert theme="success" %}}**Yeahhh !** is a text{{% /alert %}}
+{{% alert theme="warning" %}}**Be carefull** is a text{{% /alert %}}
+{{% alert theme="danger" %}}**Beware !** is a text{{% /alert %}}
+
+
+### attachments
+
+建 page 同名的 page.file 目錄，下面可以放檔案
+
+
+### button
+
+{{< button href="https://google.com" >}} go to google {{< /button >}}
+{{< button href="https://google.com" theme="success" >}} Success {{< /button >}}
+{{< button href="https://google.com" theme="info" >}} Info {{< /button >}}
+{{< button href="https://google.com" theme="warning" >}} Warning {{< /button >}}
+{{< button href="https://google.com" theme="danger" >}} Danger ! {{< /button >}}
+{{< button href="https://google.com" theme="default" >}} Danger ! {{< /button >}}
+
+### children
+
+例出下屬的 children 頁面列表，可以作出卡片式的 列表。
+
+
+### excerpt
+
+
+{{%excerpt%}}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in _reprehenderit in voluptate_
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+{{% /excerpt%}}
+　
+### excerpt-include
+
+從檔案引用內容 
+
+### expand
+
+可收起隱藏內容
+
+{{%expand "Is this docdock theme rocks ?" %}}Yes !.{{% /expand%}}
+
+### icon
+
+{{< icon name="film" size="large" >}}
+
+### Mermaid
+
+{{<mermaid align="left">}}
+graph LR;
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /mermaid >}}
+
+
+### Notice
+
+Note
+{{% notice note %}}
+A notice disclaimer
+{{% /notice %}}
+
+
+Info 
+{{% notice info %}}
+An information disclaimer
+{{% /notice %}}
+
+Tip 
+{{% notice tip %}}
+A tip disclaimer
+{{% /notice %}}
+
+Warning 
+{{% notice warning %}}
+An warning disclaimer
+{{% /notice %}}
+
+
+### panel
+
+可以把一些內容加框
+
+{{% panel footer="panel footer" %}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{{% /panel %}}
+
+
+### revealjs
+
+[reveal.js](http://lab.hakim.se/reveal-js/)  Slide
+
+
+
 
 
 # 語法
@@ -69,8 +176,8 @@ Task list: :smile:
 標頭上加上  `toc: = true`，程式會把大的標題生成目錄
 
 
-區塊元素
-========
+## 區塊元素
+
 
  ** List **
 
@@ -86,8 +193,8 @@ Task list: :smile:
 
 
 
-標題
---------
+# 標題
+
 
 Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
 
@@ -110,8 +217,8 @@ Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階�
 行首的井字數量決定標題的階數，行尾的#可不加
 
 
-連結
---------
+# 連結
+
 Markdown 支援兩種形式的連結語法： *行內*和*參考*兩種形式。
 
 	[連結文字](連結目標)
@@ -140,8 +247,7 @@ That's some text with a footnote.[^1]
     That's the second paragraph.
 
 
-圖片、其他、youtube
---------
+# 圖片、其他、youtube
 
 行內和參考
 
@@ -189,8 +295,8 @@ markdown預設 H1,H2的 id就是 text
 
 要指定高度的話，也可以用 `<img>`
 
-程式碼
---------
+# 程式碼
+
 
 分兩個，行內，整段
 行內像文中會提到的func name  `print()` `cast` `def()`
@@ -220,3 +326,6 @@ var d string
 3. [Archetypes](https://gohugo.io/content-management/archetypes/)
 4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
 5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+
+
+[google]: "https://www.google.com" "Search Engine"
