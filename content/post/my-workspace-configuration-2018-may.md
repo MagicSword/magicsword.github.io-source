@@ -47,8 +47,20 @@ Task list: :smile:
 * LG G2(Broken)
 * HTC OneX(Partial Broken)
 * PS4 1027
+* Printer: Brother MFC-L2740DW
+
+連接配置
+
+{{<mermaid align="left">}}
+graph LR;
+    Z97[PC:Z97] -->|Video| B[GW2760]
+    Z97[PC:Z97] -->|Video| C[EW2740]
+    PS4Pro[PS4Pro] -->|Video| B[GW2760]
+{{< /mermaid >}}
 
 # 軟體
+
+## 桌面軟體
 
 
 * Chrome
@@ -69,7 +81,7 @@ Task list: :smile:
 * Steam,BattleNet,GOG.com
 
 
-# 網站工具
+## 網站工具
 
 * Chrome Addon
     * OneTab
@@ -82,14 +94,24 @@ Task list: :smile:
 * RSS Reading: Feedly
 * Personal Site: Github Page
 
+## Android 工具
 
+* Pitt
+* Pocket
+* Keepass
+* Financisto
+* Line
+* TotalCommander
+* AnkiDroid
+* gReader
+* Wunderlist
+* tinyCamF
+* Whoscall
+* F-Droid
+    * Blockada
+    * Tachiyomi
 
 # 單項
-
-
-
-
-
 
 - 照片: 手機-> 備份到 Google Photo
 - 資料收集: Google Keep

@@ -72,4 +72,4 @@ Vim設定
 2. [Hugo Documentation](https://gohugo.io/documentation/)
 3. [Taxonomies](https://gohugo.io/content-management/taxonomies/)
 4. [After-Dark README](https://comfusion.github.io/after-dark/)
-
+5. [DocDock Theme](https://github.com/vjeantet/hugo-theme-docdock)

@@ -322,7 +322,7 @@ var d string
 # 參考連結
 
 1. [Eng-doc](http://daringfireball.net/projects/markdown/syntax)
-2. [markdown.tw](: )https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
+2. [markdown.tw](https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
 3. [Archetypes](https://gohugo.io/content-management/archetypes/)
 4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
 5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)

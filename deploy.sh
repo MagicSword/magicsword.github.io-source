@@ -11,7 +11,7 @@ cd public
 git add .
 
 # Commit changes.
-msg="rebuilding site `date`"
+msg="Rebuilding Site `date`"
 
 if [ $# -eq 1 ]
       then msg="$1"
@@ -19,7 +19,7 @@ if [ $# -eq 1 ]
       git commit -m "$msg"
 
       # Push source and build repos.
-      git push origin master
+      git push -u origin master
 
       # Come Back up to the Project Root
       cd ..

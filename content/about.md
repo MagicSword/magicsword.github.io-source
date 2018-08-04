@@ -18,6 +18,11 @@ weight = 100
 
 [Netlify Hugo: After-dark](https://after-dark.netlify.com)
 
+# CheatSheet
+
+[emoji cheat sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+
+
 ----
 
 # LOG
@@ -31,7 +36,8 @@ weight = 100
 
 ----
 
-## Ref:
+# Ref:
+
 1. [StaticGen 靜態網站生成工具比較](https://www.staticgen.com/)
 
 
