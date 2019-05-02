@@ -2,7 +2,7 @@
 title = "PYCON TW 2018 June 01 02 Taipei Todolist"
 date = 2018-06-02T18:50:15+08:00
 description = "PYCON TW 2018 todolist"
-draft = true
+draft = false
 toc = true  # by after-dark
 categories = ["programming"]
 tags = ["python", "pycon","video"]

@@ -2,7 +2,7 @@
 title = "Collection Books Organized"
 date = 2018-06-03T17:51:53+08:00
 description = "書籍整理 online"
-draft = true
+draft = false
 toc = true  # by after-dark
 categories = ["life"]
 tags = ["collection", "book","GTD"]

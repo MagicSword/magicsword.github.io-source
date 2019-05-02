@@ -2,7 +2,7 @@
 title = "Learning Google Spreadsheet Functions"
 date = 2018-06-03T23:30:28+08:00
 description = "Using Google SpreadSheet Functions"
-draft = true
+draft = false
 toc = true  # by after-dark
 categories = ["technology"]
 tags = ["google", "spreadsheet","office"]
