@@ -1,88 +1,58 @@
-baseURL = "/"
-
-languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "After-Dark"
-theme = "docdock"
-themesdir = "themes"
+baseURL = "/"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disqusShortname = "neromiller-github"
+enableEmoji = true
+enableMissingTranslationPlaceholders = false
+languageCode = "en-us"
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
-
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir= false
-enableMissingTranslationPlaceholders = false
-disqusShortname = "neromiller-github" # Optional, add Disqus shortname for comments
 staticDir = ["static"]
-enableEmoji= true
-
-
-# [Languages]
-# [Languages.en]
-# title = "After-Dark"
-# weight = 1
-# languageName = "English"
-# 
-# [Languages.fr]
-# title = "After-Dark"
-# weight = 2
-# languageName = "Français"
-
-
-
-
-[params]
-editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content/"
-showVisitedLinks = true # default is false
-themeStyle = "original" # "original" or "flex" # default "flex"
-themeVariant = "blue" # choose theme variant "green", "gold" , "gray", "blue" (default)
-ordersectionsby = "weight" # ordersectionsby = "title"
-disableHomeIcon = false # default is false
-disableSearch = false # default is false
-disableNavChevron = true # set true to hide next/prev chevron, default is false
-highlightClientSide = true # set true to use highlight.pack.js instead of the default hugo chroma highlighter
-menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
-enableGitInfo = true
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
-
-
+theme = "docdock"
+themesdir = "themes"
+title = "After-Dark"
 [[menu.shortcuts]]
-pre = "<h3>More</h3>"
-name = "<i class='fa fa-tags'></i> <label>Tags</label>"
-url = "/tags/"
-weight = 10
-
+identifier = "ds"
+name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+url = "https://github.com/MagicSword/"
+weight = 6
 [[menu.shortcuts]]
-name = "<i class='fa fa-folder-open'></i> <label>Categories</label>"
-url = "/categories/"
-weight = 20
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
-url = "/about/"
-weight = 30
-
+identifier = "hugodoc"
+name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
+url = "https://gohugo.io/"
+weight = 5
 [[menu.shortcuts]]
 name = "<i class='fa fa-car'></i> <label>FontAwesome Icon</label>"
 url = "https://docdock.netlify.com/shortcodes/icon/"
-weight = 35
-
+weight = 4
 [[menu.shortcuts]]
-name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 40
-
-
+name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
+url = "/about/"
+weight = 3
 [[menu.shortcuts]]
-name = "<i class='fa fa-github'></i> <label>Github repo</label>"
-identifier = "ds"
-url = "https://github.com/MagicSword/"
-weight = 50
-
-
+name = "<i class='fa fa-folder-open'></i> <label>Categories</label>"
+url = "/categories/"
+weight = 2
+[[menu.shortcuts]]
+name = "<i class='fa fa-tags'></i> <label>Tags</label>"
+pre = "<h3>More</h3>"
+url = "/tags/"
+weight = 1
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+[params]
+disableHomeIcon = false
+disableNavChevron = true
+disableSearch = false
+editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content/"
+enableGitInfo = true
+highlightClientSide = true
+menushortcutsnewtab = false
+ordersectionsby = "weight"
+showVisitedLinks = true
+themeStyle = "original"
+themeVariant = "blue"
+[taxonomies]
+category = "categories"
+tag = "tags"
