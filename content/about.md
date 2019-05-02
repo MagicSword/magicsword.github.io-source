@@ -1,10 +1,11 @@
 +++
-title = "About"
 date = "2018-03-30"
-menu = "main"
+title = "About"
 weight = 100
-+++
+[menu.main]
+weight = 1
 
++++
 個人筆記收集整理
 
 之前用  [Pelican] [Pelican]
@@ -51,4 +52,4 @@ weight = 100
 [HugoDoc]: https://gohugo.io/documentation/
 [HugoTheme]: https://themes.gohugo.io/
 [After-Dark]: https://themes.gohugo.io/after-dark/
-[docdock]: https://docdock.netlify.com/ 
+[docdock]: https://docdock.netlify.com/
