@@ -1,6 +1,5 @@
 +++
 content = "hello"
-draft = true
 title = "new post from forestry.io"
 
 +++
