@@ -10,3 +10,5 @@ fields:
 - type: textarea
   name: content
   label: content
+pages:
+- content/post/new-post-from-forestry-io.md
