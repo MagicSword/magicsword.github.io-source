@@ -1,0 +1,12 @@
+---
+label: hello
+hide_body: false
+display_field: title
+fields:
+- type: text
+  name: title
+  label: title
+  description: hello
+- type: textarea
+  name: content
+  label: content
