@@ -14,6 +14,7 @@ images = [
 +++
 
 
-this page for placeholder.
+this page for placeholder. _index.md
+
 
 
