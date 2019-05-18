@@ -168,27 +168,6 @@ PyPDF2 功能不少，不過 取出文字的功能好像不太完美，
 
 # 進階閱讀
 
-# 程式碼
-
-
-分兩個，行內，整段
-行內像文中會提到的func name  `print()` `cast` `def()`
-
-整段用 三個  \`\`\` 包起，第一個後面放語言的名字
-```python
-	for i in 10:
-		print("heloo,world")
-```
-
-如果要的syntax highlighting的話，要用hugo內的 `shortcode`
-
-{{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{< / highlight >}}
-
 
 
 
@@ -196,10 +175,6 @@ var d string
 
 1. [How to Work With a PDF in Python](https://realpython.com/pdf-python/)
 2. [f-string](https://realpython.com/python-f-strings/) 
-3. [Archetypes](https://gohugo.io/content-management/archetypes/)
-4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
-5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
-
 
 [google]: "https://www.google.com" "Search Engine"
 [Python]: "https://zh.wikipedia.org/wiki/Python" "Programming Language"
