@@ -38,6 +38,7 @@ weight = 1
 * [Hugo 0.59 release](https://github.com/gohugoio/hugo/releases/tag/v0.59.0)
 * 新功能，[影像處理](https://gohugo.io/content-management/image-processing/#image-processing-options) `{{ $image.Resize "600x jpg #b31280" }}` 
 * [PageMethod](https://gohugo.io/variables/pages/) : 上下頁，上下段
+
 20191029
 
 * [Hugo 0.49 加入了 Archtype bundle ，可以用整個目錄的範本[()
