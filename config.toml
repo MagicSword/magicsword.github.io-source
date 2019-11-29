@@ -51,6 +51,7 @@ highlightClientSide = true
 menushortcutsnewtab = false
 ordersectionsby = "weight"
 showVisitedLinks = true
+#themeStyle = "flex" 
 themeStyle = "original"
 themeVariant = "blue"
 [taxonomies]

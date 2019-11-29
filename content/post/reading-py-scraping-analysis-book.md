@@ -5,7 +5,7 @@ description = " Python：網路爬蟲與資料分析入門實戰 "
 draft = false
 toc = true  # by after-dark
 categories = ["technology"]
-tags = ["python", "scraping","spider"]
+tags = ["reading", "python", "scraping","spider"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
@@ -115,46 +115,99 @@ print(soup.find('h1').text)
 
 除了用暴力法找以外，也可以從已找到的元素的 親層(parent)、子層(children)、兄弟層(siblings) 移動
 
+BeautifulSoup 文件中相關的部分
+
+* [向上](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#going-up) : `.parent`, `.parents`
+* [向下](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#going-back-and-forth) : `.next_sibling` ,  `.previous_sibling`
+* [左右](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#going-sideways) : `.next_element` and `.previous_element`
+
 
 ## 2-4 正規表示式 (Regular Expression)
 
-   
+"""python
+import  re
+
+for title in soup.find_all(re.compile('h[1-6]')):
+    print(title.text.strip())
+
+"""
 
 # Chapter 03 網頁爬蟲範例實戰
+
 3-1 PTT 八卦板今日熱門文章
 3-2 Yahoo 奇摩電影本週新片
 3-3 兩大報當日焦點新聞
 3-4 Google 搜尋股價資訊
 3-5 Dcard 今日熱門文章
 
+從實例中學習抓取資料、分析。
+
+
 # Chapter 04 使用 API
-4-1 API 簡介
+
+## 4-1 API 簡介
+
+API(Application Programming Interface)：在網站來說，就是取用站方整理好的資料的介面。
+
+HTTP request 的方法 :
+
+1. `GET` : 參數寫在網址
+2. `POST` : 表單資料打包後，送出
+3. `PUT` : 背景送出資料
+4. `DELETE` : 背景刪除資料
+
+API 送回的資料，通常會以幾種形式送回 :
+
+1. JSON : key, value 成對的資料
+2. XML : tag 標記的資料
+
+
+
+
 4-2 PTT 八卦板眾來源分佈 (ipstack.com)
 4-3 IMDB API
 4-4 Google Maps APIs (Google Geocoding/Places API)
 4-5 Dcard API
 
 # Chapter0 5 資料儲存
+
 5-1 儲存圖片與多媒體檔案
+
+file system
+
 5-2 儲存資料到 CSV 檔
+
+save to  CSV
+
 5-3 儲存資料到資料庫 SQLite
 
+Save SQlite
+
 # Chapter 06 不同編碼與類型的文件
+
 6-1 非 UTF-8 編碼的文件
+
+
 6-2 XML 文件
 
+
+
 # Chapter 07 進階爬蟲議題
+
 7-1 處理表單及登入頁 ：台灣高鐵時刻查詢
 7-2 處理表單及登入頁 ：Yelp 登入
 7-3 使用WebDriver：台銀法拍屋資訊查詢
 7-4 爬蟲程式經驗談：被封鎖的常見原因、常用 Header 欄位、網站隱藏欄位、使用代理伺服器
 
 # Chapter 08 資料分析實戰
+
 8-1 台股每日盤後資訊爬蟲及策略回測（量化投資）
 8-2 電影評論情緒分析（中文自然語言處理與機器學習）
 8-3 商品特價 Gmail 通知：Costco 商品網頁
 
-# 附表 本書範例目標網站列表
+# 附錄 
+
+附表 本書範例目標網站列表
 
 附錄A 在 Mac 安裝Anaconda 開發環境
 
@@ -167,310 +220,16 @@ B-4 博客來網路書店爬蟲
 
 
 
-
-
-
-
-
-# Docdock
-
-### Alert
-
-{{% alert theme="info" %}}**this** is a text{{% /alert %}}
-{{% alert theme="success" %}}**Yeahhh !** is a text{{% /alert %}}
-{{% alert theme="warning" %}}**Be carefull** is a text{{% /alert %}}
-{{% alert theme="danger" %}}**Beware !** is a text{{% /alert %}}
-
-
-### attachments
-
-建 page 同名的 page.file 目錄，下面可以放檔案
-
-
-### button
-
-{{< button href="https://google.com" >}} go to google {{< /button >}}
-{{< button href="https://google.com" theme="success" >}} Success {{< /button >}}
-{{< button href="https://google.com" theme="info" >}} Info {{< /button >}}
-{{< button href="https://google.com" theme="warning" >}} Warning {{< /button >}}
-{{< button href="https://google.com" theme="danger" >}} Danger ! {{< /button >}}
-{{< button href="https://google.com" theme="default" >}} Danger ! {{< /button >}}
-
-### children
-
-例出下屬的 children 頁面列表，可以作出卡片式的 列表。
-
-
-### excerpt
-
-
-{{%excerpt%}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in _reprehenderit in voluptate_
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{{% /excerpt%}}
-　
-### excerpt-include
-
-從檔案引用內容 
-
-### expand
-
-可收起隱藏內容
-
-{{%expand "Is this docdock theme rocks ?" %}}Yes !.{{% /expand%}}
-
-### icon
-
-{{< icon name="film" size="large" >}}
-
-### Mermaid
-
-{{<mermaid align="left">}}
-graph LR;
-    A[Hard edge] -->|Link text| B(Round edge)
-    B --> C{Decision}
-    C -->|One| D[Result one]
-    C -->|Two| E[Result two]
-{{< /mermaid >}}
-
-
-### Notice
-
-Note
-{{% notice note %}}
-A notice disclaimer
-{{% /notice %}}
-
-
-Info 
-{{% notice info %}}
-An information disclaimer
-{{% /notice %}}
-
-Tip 
-{{% notice tip %}}
-A tip disclaimer
-{{% /notice %}}
-
-Warning 
-{{% notice warning %}}
-An warning disclaimer
-{{% /notice %}}
-
-
-### panel
-
-可以把一些內容加框
-
-{{% panel footer="panel footer" %}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{{% /panel %}}
-
-
-### revealjs
-
-[reveal.js](http://lab.hakim.se/reveal-js/)  Slide
-
-
-
-
-
-# 語法
-
-樣式可以用 星號\* 或是 底線\_
-
-斜體 emphasis, aka italics, with *asterisks* or _underscores_.
-粗體 Strong emphasis, aka bold, with **asterisks** or __underscores__.
-合併 Combined emphasis with **asterisks and _underscores_**.
-刪除線 Strikethrough uses two tildes. ~~Scratch this.~~
-
-
-孔子說：
-
-> 說什麼
-
-定義是：
-
-: 是什麼
-
-
-# 目錄
-
-第一種是手工的目錄
-
-<h3 id="toc">目錄</h3>
-
-*   [概述](#overview)
-	* [語法](#syntax)	
-	* [目錄](#toc)
-*   [區塊元素](#block)
-	* [標題](#caption)
-	* [連結](#link)
-	* [圖片、其他、youtube](#media)
-	* [程式碼](#code)
-	* [參考連結](#ref)
-
-
-內文地方加上 <h2 id="overview">概述</h2>的連結
-
-第二種是 [After-Dark](https://comfusion.github.io/after-dark/)  內建目錄，在
-標頭上加上  `toc: = true`，程式會把大的標題生成目錄
-
-
-## 區塊元素
-
-
- ** List **
-
-* AAA
-	* BBB
-* CCC
-
-
-1. what
-2. some
-3. soso
-
-
-
-
-# 標題
-
-
-Setext 形式是用底線的形式，利用 `=` （最高階標題）和 `-` （第二階標題），例如：
-
-    This is an H1
-    =============
-
-    This is an H2
-    -------------
-
-任何數量的 `=` 和 `-` 都可以有效果。
-
-Atx 形式則是在行首插入 1 到 6 個 `#` ，對應到標題 1 到 6 階，例如：
-
-    # This is an H1
-
-    ## This is an H2
-
-    ###### This is an H6
-
-行首的井字數量決定標題的階數，行尾的#可不加
-
-
-# 連結
-
-Markdown 支援兩種形式的連結語法： *行內*和*參考*兩種形式。
-
-	[連結文字](連結目標)
-
-絕對路徑
-[Google](https://www.google.com)
-
-相對路徑
-[post](/post/)
-
-連結到文章內的id
-[example][id] 或是空白隔著 [2 example] [id]
-
- [id]: http://example.com/  "Optional Title Here"
- [id]: http://example.com/  'Optional Title Here'
- [id]: http://example.com/  (Optional Title Here)
- [id]: <http://example.com/>  "Optional Title Here"
-
-Footer
-
-That's some text with a footnote.[^1]
-
-[^1]: 
-	And that's the footnote.
-
-    That's the second paragraph.
-
-
-# 圖片、其他、youtube
-
-行內和參考
-
-```md
-    ![Alt text](/path/to/img.jpg)
-
-    ![Alt text](/path/to/img.jpg "Optional title")
-```
-
-
-參考式的圖片語法則長得像這樣：
-```md
-    ![Alt text][id]
-```
-
-「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
-
-```md
-    [id]: url/to/image  "Optional title attribute"
-```
-
-
-### Markdown Anchor
-
-markdown預設 H1,H2的 id就是 text
-
-```html
-<h1 id="MyAnchorName">My Title</h1>
-```
-
-自定錨
-```html
-<a id="MyAnchorName">My Title</a>
-```
-
-連結語法
-
-```html
-<a href="#MyAnchorName">My Content</a>
-```
-
-```markdown
-[create an anchor](#MyAnchorName)
-```
-
-要指定高度的話，也可以用 `<img>`
-
-# 程式碼
-
-
-分兩個，行內，整段
-行內像文中會提到的func name  `print()` `cast` `def()`
-
-整段用 三個  \`\`\` 包起，第一個後面放語言的名字
-```python
-	for i in 10:
-		print("heloo,world")
-```
-
-如果要的syntax highlighting的話，要用hugo內的 `shortcode`
-
-{{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{< / highlight >}}
-
-
-https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-
 # 參考連結
 
-1. [作書網站](https://jwlin.github.com/py-scraping-analysis-book/ch2/blog/blog.html)
+1. [本書網站](https://jwlin.github.com/py-scraping-analysis-book/ch2/blog/blog.html)
 2. [本書Github](https://github.com/jwlin/py-scraping-analysis-book)
 3. [BeautifulSoup 文件] [BeautifulSoup]
 4. [R 語言使用者的 Python 學習筆記系列 第 16 篇:[第 16 天] 網頁解析](https://ithelp.ithome.com.tw/articles/10186119)
 5. [Nightwatch101 #5：使用 CSS Selector 定位網頁元素](https://cythilya.github.io/2017/12/15/nightwatch-css-selector/)
 6. [Nightwatch101 #6：使用 Xpath 定位網頁元素](https://cythilya.github.io/2017/12/16/nightwatch-xpath/) 
 7. [CSS selector vs XPath][CSSvsXPath] 
+8. [BeautifulSoup.css-selectors](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors)
 
 
 [google]: https://www.google.com "Search Engine"
