@@ -2,7 +2,7 @@
 title = "Reading 20191115 Record"
 date = 2019-11-15T20:41:39+08:00
 description = "Description"
-draft = true
+draft = false
 toc = true  # by after-dark
 categories = ["Reading"]
 tags = ["reading", "library"]

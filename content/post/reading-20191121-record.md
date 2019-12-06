@@ -2,7 +2,7 @@
 title = "Reading 20191121 Record"
 date = 2019-11-22T01:09:51+08:00
 description = "Description"
-draft = False
+draft = false
 toc = true  # by after-dark
 categories = ["Reading"]
 tags = ["reading", "library"]
@@ -35,7 +35,7 @@ Date: 2019-11-21	2019-12-21   虎尾鎮立圖書館
 2. [圖解日本人論:日本文化的村落性格解析](http://library.ylccb.gov.tw/bookDetail.do?id=568465)
     * 日本文化性格
 3. [滾出中國:十九、二十世紀的國恥,如何締造了民族主義的中國](http://library.ylccb.gov.tw/bookDetail.do?id=568550)
-    * 中國
+    * 中國近代與外國關係
     * [從菩薩到魔王：彭湃](https://www.thenewslens.com/article/107220)
 
 

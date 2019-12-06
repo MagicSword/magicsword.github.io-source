@@ -31,9 +31,17 @@ Task list: :smile:
 Date: 2019-11-29 2019-12-29  虎尾鎮立圖書館
 
 * [如何撰寫畢業論文:給人文科研究生的建議](http://library.ylccb.gov.tw/bookDetail.do?id=575613)
+    * Wish: 了解研究方法，論文寫作方式
+    *
 * [程式設計人應該知道的97件事:來自專家的集體智慧](http://library.ylccb.gov.tw/bookDetail.do?id=442458)
+    * Wish: 前人的建議
+    *
 * [百年孤寂](http://library.ylccb.gov.tw/bookDetail.do?id=536373)
+    * 重溫小說新譯本
+    *
 * [躁動的帝國:從乾隆到鄧小平的中國與世界](http://library.ylccb.gov.tw/bookDetail.do?id=398993)
+    * 了解中國近代史
+    *     
 
 
 # 參考連結

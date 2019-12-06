@@ -10,7 +10,7 @@
 `vim --remote-tab file2.txt`
 `:help new-vim-server`
 
-# File Naming
+# File Name
 
 檔名的話，[分類]Title.md
 
@@ -20,6 +20,12 @@
 
 reading.learning,technology,programming,
 
+20191201
+
+分類 
+Reading.Learning,Technology,Programming,
+
+tag 的話，全小寫，能想到的 tag 都加上去
 
 
 # Hugo 指令
