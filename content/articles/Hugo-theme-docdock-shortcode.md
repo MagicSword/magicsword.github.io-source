@@ -1,18 +1,17 @@
 +++
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
-date = {{ .Date }}
-description = "Description"
+title = "Hugo Theme Docdock Shortcode"
+date = 2019-12-13T01:13:34+08:00
+description = "Hugo theme docdock shortcode"
 draft = true
-toc = true  # by after-dark
-categories = ["Technology"]
-tags = ["hello", "world"]
+toc = true
+categories = ["Blog"]
+tags = ["hugo", "blog"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
-  "https://source.unsplash.com/category/technology/"
+  "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image
 +++
-
 Before you continue, please take a moment to configure your archetypes.
 
 

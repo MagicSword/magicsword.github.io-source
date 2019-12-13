@@ -13,7 +13,17 @@ theme = "docdock"
 themesdir = "themes"
 title = "After-Dark"
 [[menu.shortcuts]]
-identifier = "ds"
+identifier = "MD.syntax"
+name = "<i class='fa fa-github'></i> <label>MD Syntax</label>"
+url = "https://www.markdownguide.org/extended-syntax/" 
+weight = 9
+[[menu.shortcuts]]
+identifier = "docdock.doc"
+name = "<i class='fa fa-github'></i> <label>DocDock theme doc</label>"
+url = "https://docdock.netlify.com/shortcodes/"
+weight = 7
+[[menu.shortcuts]]
+identifier = "github.page"
 name = "<i class='fa fa-github'></i> <label>Github repo</label>"
 url = "https://github.com/MagicSword/"
 weight = 6
@@ -25,7 +35,7 @@ weight = 5
 [[menu.shortcuts]]
 name = "<i class='fa fa-car'></i> <label>FontAwesome Icon</label>"
 url = "https://docdock.netlify.com/shortcodes/icon/"
-weight = 4
+weight = 8
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
 url = "/about/"

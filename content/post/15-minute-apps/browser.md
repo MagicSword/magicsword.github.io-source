@@ -1,11 +1,11 @@
 +++
-title = "Browser"
+title = "Web Browser (untabbed) - MooseAche"
 date = 2018-04-21T18:16:41+08:00
 description = "Thank you for choosing After Dark."
 draft = true
 toc = false
 categories = ["technology"]
-tags = ["hello", "world"]
+tags = ["python", "gui"]
 images = [
   "https://source.unsplash.com/category/technology/1600x900"
 ] # overrides the site-wide open graph image

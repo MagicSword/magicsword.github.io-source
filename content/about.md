@@ -45,6 +45,16 @@ weight = 1
 * 改完 `theme` 以後，記得要更新 `theme\docdock\archtypes` 裡的範本
 
 
+20191127
+
+* [Hugo v0.60.0 release](https://github.com/gohugoio/hugo/releases/tag/v0.60.0)
+* `TableOfContents`, Templates, ..., etc.
+
+20191210
+
+* [Hugo v0.61.0 release](https://github.com/gohugoio/hugo/releases/tag/v0.61.0)
+
+
 ***
 
 # Ref:

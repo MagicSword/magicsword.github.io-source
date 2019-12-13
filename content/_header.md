@@ -13,6 +13,8 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
-![](https://picsum.photos/200/?random)
+![](https://picsum.photos/250/?random)
 
+<!--
 _header.md here
+-->

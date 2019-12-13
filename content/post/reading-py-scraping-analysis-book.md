@@ -46,6 +46,18 @@ Task list: :smile:
 
 邊讀邊做個筆記心得。
 
+scrayping 工具
+
+* http: requests
+* html parser: bs4 , lxml
+* regexp
+* 使用 API
+* data store: image,csv,SQLite
+* utf-8，XML
+* 進階議題：使用者登入、cookie, webdriver,Header, robot.txt, proxy, 隱藏欄位
+* scrapy
+
+
 
 # Chapter 01 環境設定與網頁爬蟲初探
 
