@@ -76,9 +76,8 @@ bs4 中有4 種物件：
 * `Comment` : XHTML 中的註解 `<!--`我是註解 `-->`
 
 
-{{% notice warning %}}
-  bs4 中 `class` 用 `class_` ，避免跟原有的關鍵字衝突
-{{% /notice %}}
+
+{{% alert theme="warning" %}} bs4 中 class 用 class_ ，避免跟原有的關鍵字衝突 {{% /alert %}}
 
 找資料的方法
 
