@@ -8,9 +8,11 @@ weight = 1
 +++
 個人筆記收集整理
 
-之前用  [Pelican](https://github.com/getpelican/pelican) [Pelican](https://github.com/getpelican/pelican)
+之前用  
 
-後來有用過 [Nikola](https://github.com/getnikola/nikola),  [Hexo](https://github.com/hexojs/hexo)
+* [Pelican](https://github.com/getpelican/pelican)
+* [Nikola](https://github.com/getnikola/nikola)
+* [Hexo](https://github.com/hexojs/hexo)
 
 目前用 [Hugo](https://github.com/gohugoio/hugo)
 
@@ -18,11 +20,32 @@ weight = 1
 
 [Netlify Hugo: After-dark](https://after-dark.netlify.com)
 
-# CheatSheet
+CheatSheet
 
 [emoji cheat sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
 ***
+
+# Themes
+
+`git submodule add git@github.com:MeiK2333/github-style.git themes/github-style`
+
+* https://github.com/vjeantet/hugo-theme-docdock
+* https://github.com/matcornic/hugo-theme-learn
+
+Simple
+* https://github.com/MeiK2333/github-style
+* https://github.com/xiaoheiAh/hugo-theme-pure
+* https://github.com/knadh/hugo-ink
+* https://github.com/stackbithq/stackbit-theme-fresh/tree/hugo
+* https://themes.gohugo.io/osprey-delight/
+* https://themes.gohugo.io/hugo-business-frontpage-theme/
+* https://themes.gohugo.io/hugo-theme-pure/
+
+Dark
+* https://after-dark.habd.as/feature/quick-install/
+* https://github.com/guangmean/Niello
+
 
 # LOG
 
@@ -54,9 +77,24 @@ weight = 1
 
 * [Hugo v0.61.0 release](https://github.com/gohugoio/hugo/releases/tag/v0.61.0)
 
+20191213
 
-***
+* `\layouts\shortcodes\alert.html notice.html  panel.html`
+* 參考 `vjantet/hugo-theme-docdock/`[<8931da2>](https://github.com/vjeantet/hugo-theme-docdock/commit/8931da249615756ff0d9c9f69a1e0ec8548fc380)
+
+* paste
+
+
+# Site:
+1. [forestry][forestry.io]
+1. [netlify][]
 
 # Ref:
 
 1. [StaticGen 靜態網站生成工具比較](https://www.staticgen.com/)
+1. [使用 Forestry 替你的 Hugo 加上管理介面](https://hpd.io/posts/forestry-cms-for-hugo/)
+
+[forestry.io]: https://forestry.io/ "線上寫作"
+[netlify]: https://www.netlify.com/ "netlify(compile,net hosting)"
+
+

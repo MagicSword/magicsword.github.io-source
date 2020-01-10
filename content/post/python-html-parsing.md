@@ -76,12 +76,13 @@ bs4 中有4 種物件：
 * `Comment` : XHTML 中的註解 `<!--`我是註解 `-->`
 
 
-
-{{% alert theme="warning" %}} bs4 中 class 用 class_ ，避免跟原有的關鍵字衝突 {{% /alert %}}
+{{% notice warning %}}
+  bs4 中 `class` 用 `class_` ，避免跟原有的關鍵字衝突
+{{% /notice %}}
 
 找資料的方法
 
-1. Nagigation the tree: 用 CSS selector
+1. Nagigation the tree: 用 CSS selector，`soup.select("p.strikeout.body")`
 2. Searching the tree: `find`, `find_all`
 
 ## Searching the Tree
@@ -90,13 +91,20 @@ bs4 中有4 種物件：
 
 
 
+## Search 
 
+* by id : results = soup.find(id='ResultsContainer')
+* by class: job_elems = results.find_all('section', class_='card-content')
+* Extract Text From HTML Elements: title_elem.text
+* Find Elements by Class Name and Text Content: python_jobs = results.find_all('h2', string='Python Developer')
+* Pass a Function to a Beautiful Soup Method: python_jobs = results.find_all('h2',
+                               string=lambda text: 'python' in text.lower())
+* Extract Attributes From HTML Elements: link = p_job.find('a')['href']                                    
 
 # 參考連結
 
-1. []()
-1. []()
 1. [用Python爬取 Youtube 資訊 - 圖文課程](https://hiskio.com/courses/112)
+1. [RealPython: Beautiful Soup: Build a Web Scraper With Python](https://realpython.com/beautiful-soup-web-scraper-python/)
 1. []()
 
 # Library
