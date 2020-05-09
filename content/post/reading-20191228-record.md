@@ -32,22 +32,23 @@ Date: 2019-12-28	2020-01-30
 
 * [行為的藝術:52個非受迫性行為偏誤](http://library.ylccb.gov.tw/bookDetail.do?id=477913)
     * Make Life Great Again
-    *
+    * todo
 * [思考的藝術:52個非受迫性思考錯誤](http://library.ylccb.gov.tw/bookDetail.do?id=477914)
     * Make Life Great Again
-    *
+    * todo
 * [如果選項有兩個,選第三個:思考大師狄波諾的思考力訓練11講](http://library.ylccb.gov.tw/bookDetail.do?id=508021)
     * Make Life Great Again
-    * 
+    * 思考訓練：CoRT(Cognitive Research Trust) 
+    * PISCO: Purpose,Input,Solution,Choice,Operation
 * [SQL語法查詢入門:挖掘數據真相,征服大數據時代的第一本書](http://library.ylccb.gov.tw/bookDetail.do?id=580560)
     * Review PostgreSQL 
-    *
+    * Good book
 * [我的專屬德語家教課](http://library.ylccb.gov.tw/bookDetail.do?id=504317)
     * Learning Deutsch 
-    *
+    * 
 * [還在用老掉牙的RDBMS?:下一代圖資料庫Neo4j實戰](http://library.ylccb.gov.tw/bookDetail.do?id=539954)
     * Learning new DB: Graphic DB neo4j 
-    *
+    * 關係圖資料庫
 
 
 # 參考連結

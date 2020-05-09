@@ -45,7 +45,7 @@ Simple
 Dark
 * https://after-dark.habd.as/feature/quick-install/
 * https://github.com/guangmean/Niello
-
+* https://themes.gohugo.io/hugo-theme-zdoc/    
 
 # LOG
 
