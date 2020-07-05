@@ -4,8 +4,8 @@ date = 2020-02-20T19:06:17+08:00
 description = "Description"
 draft = false
 toc = true  # by after-dark
-categories = ["Technology"]
-tags = ["hello", "world"]
+categories = ["Reading"]
+tags = ["reading", "library"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
