@@ -1,69 +1,114 @@
-DefaultContentLanguage = "en"
 baseURL = "/"
+languageCode = "en-US"
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
-disqusShortname = "neromiller-github"
-enableEmoji = true
-enableMissingTranslationPlaceholders = false
-languageCode = "en-us"
-pygmentsCodeFences = true
-pygmentsStyle = "monokai"
-staticDir = ["static"]
-theme = "docdock"
+
+title = "Hugo Learn Documentation"
+theme = "hugo-theme-learn"
 themesdir = "themes"
-title = "After-Dark"
-[[menu.shortcuts]]
-identifier = "MD.syntax"
-name = "<i class='fa fa-github'></i> <label>MD Syntax</label>"
-url = "https://www.markdownguide.org/extended-syntax/" 
-weight = 9
-[[menu.shortcuts]]
-identifier = "docdock.doc"
-name = "<i class='fa fa-github'></i> <label>DocDock theme doc</label>"
-url = "https://docdock.netlify.com/shortcodes/"
-weight = 7
-[[menu.shortcuts]]
-identifier = "github.page"
-name = "<i class='fa fa-github'></i> <label>Github repo</label>"
-url = "https://github.com/MagicSword/"
-weight = 6
-[[menu.shortcuts]]
-identifier = "hugodoc"
-name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
-url = "https://gohugo.io/"
-weight = 5
-[[menu.shortcuts]]
-name = "<i class='fa fa-car'></i> <label>FontAwesome Icon</label>"
-url = "https://docdock.netlify.com/shortcodes/icon/"
-weight = 8
-[[menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
-url = "/about/"
-weight = 3
-[[menu.shortcuts]]
-name = "<i class='fa fa-folder-open'></i> <label>Categories</label>"
-url = "/categories/"
-weight = 2
-[[menu.shortcuts]]
-name = "<i class='fa fa-tags'></i> <label>Tags</label>"
-pre = "<h3>More</h3>"
-url = "/tags/"
-weight = 1
-[outputs]
-home = ["HTML", "RSS", "JSON"]
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
 [params]
-disableHomeIcon = false
-disableNavChevron = true
-disableSearch = false
-editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content/"
-enableGitInfo = true
-highlightClientSide = true
-menushortcutsnewtab = false
-ordersectionsby = "weight"
-showVisitedLinks = true
-#themeStyle = "flex" 
-themeStyle = "original"
-themeVariant = "blue"
-[taxonomies]
-category = "categories"
-tag = "tags"
+  editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content"
+  description = "After Dark"
+  author = "Nero Miller"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  disableLandingPageButton = false
+  disableMermaid = false
+  customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
+  titleSeparator = "::"
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "blue"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+title = "Documentation for Hugo Learn Theme"
+weight = 1
+languageName = "English"
+landingPageURL = "/en"
+landingPageName = "<i class='fas fa-home'></i> Home"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "ds"
+url = "https://github.com/matcornic/hugo-theme-learn"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> Showcases"
+url = "showcase"
+weight = 11
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 30
+
+[Languages.fr]
+title = "Documentation du thème Hugo Learn"
+weight = 2
+languageName = "Français"
+landingPageURL = "/fr"
+landingPageName = "<i class='fas fa-home'></i> Accueil"
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
+identifier = "ds"
+url = "https://github.com/matcornic/hugo-theme-learn"
+weight = 10
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> Vitrine"
+url = "/showcase"
+weight = 11
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bookmark'></i> Documentation Hugo"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Crédits"
+url = "/credits"
+weight = 30
+
+[Languages.zh]
+title = "Hugo 主題 Learn 文件"
+weight = 3
+languageName = "正體中文"
+landingPageURL = "/zh"
+landingPageName = "<i class='fas fa-home'></i> 家"
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub 檔案庫 "
+identifier = "ds"
+url = "https://github.com/matcornic/hugo-theme-learn"
+weight = 10
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-camera'></i> 展示"
+url = "/showcase"
+weight = 11
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bookmark'></i> Hugo 文件"
+identifier = "hugodoc"
+url = "https://gohugo.io/"
+weight = 20
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> 感謝"
+url = "/credits"
+weight = 30

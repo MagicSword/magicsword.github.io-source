@@ -1,11 +1,11 @@
 +++
-title = "CHAPTER 17 處理影像圖片"
-date = 2018-08-11T18:41:28+08:00
-description = "CHAPTER 17 處理影像圖片"
-draft = true
+title = "Reading Stephen King on Writing"
+date = 2018-08-08T20:48:59+08:00
+description = "A memoir of the craft"
+draft = false
 toc = true  # by after-dark
-categories = ["technology"]
-tags = ["hello", "world"]
+categories = ["life"]
+tags = ["reading", "writing", "StephenKing"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
@@ -13,8 +13,7 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
-Before you continue, please take a moment to configure your archetypes.
-
+史蒂芬．金談寫作, 簡單讀後心得
 
 <!--more-->
 
@@ -26,10 +25,68 @@ Task list: :smile:
 - [ ] 完成
 
 
-# 概述
+# 資料
+
+![史蒂芬．金談寫作](http://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/032/36/0010323698.jpg&v=446a22e1&w=348&h=348)
 
 
-# Docdock
+- [史蒂芬．金談寫作 @ 博客來](http://www.books.com.tw/products/0010323698)
+- [On Writing: A Memoir Of The Craft @ Amazon-US](https://www.amazon.com/Writing-Memoir-Craft-Stephen-King-ebook/dp/B000FC0SIM)
+
+
+**史蒂芬．金談寫作(On Writing: A Memoir Of The Craft)**
+
+
+- 作者： 史蒂芬．金 (Stephen King) 
+- 譯者： 
+- 出版社：商周出版  
+- 出版日期：2006/02/15
+- 語言：繁體中文
+- 定價：300元
+- 優惠價：79折237元
+- ISBN：9574699978
+- 叢書系列：普羅米修斯系列
+- 規格：平裝 / 320頁 / 15 x 21 cm / 普通級 / 單色印刷 / 初版
+- 出版地：台灣
+- 本書分類：文學小說> 文學研究> 外國文學研究
+
+
+# 前言
+
+- 導讀
+ * 自傳式寫作、自我對話的回憶錄
+ * 前三章作者回憶中建構的世界、後幾章開始提及寫作技巧、訓練
+- 序二
+ * [The Elements of Style 風格元素](http://www.books.com.tw/products/0010674355) William Strunk, E.B. White 其中的一章 作文的原則 
+ * 上書的第十七條原則 -- 刪除不必要的文字
+ * 自傳 + 回憶錄 + 寫作建議
+
+# 第一章：履歷
+
+- 作者自傳、生活、回憶
+- The Liars' Club ( 大說謊家倶樂部 ) by Mary Karr 
+ 
+# 第二章：寫作是什麼？
+
+- 寫作從少量開始
+
+# 第三章：工具箱
+
+- 文法
+
+# 第四章：論寫作
+
+
+# 後記：論生活
+
+
+# 更多之一：關門，開門
+
+
+# 更多之二：書單
+
+
+
 
 ### Alert
 
@@ -61,15 +118,7 @@ Task list: :smile:
 ### excerpt
 
 
-{{%excerpt%}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in _reprehenderit in voluptate_
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{{% /excerpt%}}
-　
+
 ### excerpt-include
 
 從檔案引用內容 
@@ -82,7 +131,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ### icon
 
-{{< icon name="film" size="large" >}}
 
 ### Mermaid
 

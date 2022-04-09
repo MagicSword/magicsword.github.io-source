@@ -1,12 +1,14 @@
 +++
-title = "20200225 HelloMSTodoGoodbyeWunderlistYet"
-date = 2020-02-25T21:44:55+08:00
+title = "Hugo Blog New Theme Learn"
+date = 2022-04-06T23:38:03+08:00
 description = "Description"
-draft = true
+draft = false
 toc = true  # by after-dark
-categories = ["Technology"]
-tags = ["hello", "world"]
-pre ="<i class='fa fa-file'></i> "
+categories = ["technology"]
+tags = ["hugo", "theme"]
+menuTitle = "Theme Learn"
+pre = "<i class='fab fa-github'></i> "
+post ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
   "https://source.unsplash.com/category/technology/"
@@ -28,61 +30,180 @@ Task list: :smile:
 
 # 概述
 
+因為 docdock 太久沒有更新，更新到新版的 hugo 後， tags 出問題，所以換成 hugo-theme-learn
 
-# Docdock
+# Learn
 
-### Alert
+## Basics
 
-{{% alert theme="info" %}}**this** is a text{{% /alert %}}
-{{% alert theme="success" %}}**Yeahhh !** is a text{{% /alert %}}
-{{% alert theme="warning" %}}**Be carefull** is a text{{% /alert %}}
-{{% alert theme="danger" %}}**Beware !** is a text{{% /alert %}}
+#### Req
 
+pass
 
-### attachments
+#### Installation
 
-建 page 同名的 page.file 目錄，下面可以放檔案
+pass
 
+#### Configuration
 
-### button
+設定在 config.toml
 
-{{< button href="https://google.com" >}} go to google {{< /button >}}
-{{< button href="https://google.com" theme="success" >}} Success {{< /button >}}
-{{< button href="https://google.com" theme="info" >}} Info {{< /button >}}
-{{< button href="https://google.com" theme="warning" >}} Warning {{< /button >}}
-{{< button href="https://google.com" theme="danger" >}} Danger ! {{< /button >}}
-{{< button href="https://google.com" theme="default" >}} Danger ! {{< /button >}}
+https://learn.netlify.app/en/basics/configuration/
 
-### children
+#### Style customization
 
-例出下屬的 children 頁面列表，可以作出卡片式的 列表。
+這邊可以修改 learn theme 的一些細部設定，logo, favicon, 配色可改 red, green, blue。
 
+或是修改 blog 根目錄下的  `layouts/partials`
 
-### excerpt
+## Content
 
+### Pages organization
 
-{{%excerpt%}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in _reprehenderit in voluptate_
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{{% /excerpt%}}
-　
-### excerpt-include
+`learn` 有兩種頁面形式， Default, Chapter，差別在：
+Chapter 是用來引入子頁面的頁面，有點像封面？ 只要在頁面的 yaml 加上 `chapter=true`
 
-從檔案引用內容 
+#### Front Matter configuration
 
+```
++++
+# Table of content (toc) is enabled by default. Set this parameter to true to disable it.
+# Note: Toc is always disabled for chapter pages
+disableToc = "false"
+# If set, this will be used for the page's menu entry (instead of the `title` attribute)
+menuTitle = ""
+# The title of the page in menu will be prefixed by this HTML content
+pre = ""
+# The title of the page in menu will be postfixed by this HTML content
+post = ""
+# Set the page as a chapter, changing the way it's displayed
+chapter = false
+# Hide a menu entry by setting this to true
+hidden = false
+# Display name of this page modifier. If set, it will be displayed in the footer.
+LastModifierDisplayName = ""
+# Email of this page modifier. If set with LastModifierDisplayName, it will be displayed in the footer
+LastModifierEmail = ""
++++
+```
+
+加入 icon
+```
++++
+title = "Github repo"
+pre = "<i class='fab fa-github'></i> "
++++
+```
+
+改變頁面在選單上的順序
+```
++++
+title = "My page"
+weight = 5
++++
+```
+
+改選單上的標題
+```
++++
+title = "Install on Linux"
+menuTitle = "Linux"
++++
+```
+
+Homepage
+
+1. `content` 下的 `_index.md`
+2. `static` 目錄下的  `index.html`
+
+### Archetypes
+
+預設的頁面模板
+
+預設的頁面有兩種：Default, Chapter(封面)
+
+1. `hugo new --kind chapter <name>/_index.md`
+2. Default 
+
+```
+# Either
+hugo new <chapter>/<name>/_index.md
+# Or
+hugo new <chapter>/<name>.md
+```
+
+### Markdown syntax
+
+pass
+
+### Code highlighting
+
+pass
+
+### Menu extra shortcuts
+
+設定選單上的項目
+
+### Icons and logos
+
+設定 Icon, logo
+
+### Multilingual and i18n
+
+多語設定
+
+* Single file my-page.md is split in two files:
+    * in English: my-page.en.md
+    * in French: my-page.fr.md
+* Single file _index.md is split in two files:
+    * in English: _index.en.md
+    * in French: _index.fr.md
+
+### Tags
+
+pass
+
+## Shortcodes
+
+### Attachments
+
+可以把目錄下的檔案，以連結貼出。
+
+### Button
+
+按鈕
+
+### Children
+
+子頁，目錄結構
+
+### Expand
+
+可以摺疊的內容
+
+### Mermaid
+
+流程圖
+
+### Notice
+
+內建的提示視窗
+
+### Site param
+
+目前有的是 `editURL` ，提供直接編輯的連結。
+
+### Tabbed views
+
+頁籤
+
+----
 ### expand
 
 可收起隱藏內容
 
 {{%expand "Is this docdock theme rocks ?" %}}Yes !.{{% /expand%}}
 
-### icon
-
-{{< icon name="film" size="large" >}}
 
 ### Mermaid
 
@@ -117,18 +238,6 @@ Warning
 {{% notice warning %}}
 An warning disclaimer
 {{% /notice %}}
-
-
-### panel
-
-可以把一些內容加框
-
-{{% panel footer="panel footer" %}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{{% /panel %}}
-
-
-### revealjs
-
-[reveal.js](http://lab.hakim.se/reveal-js/)  Slide
 
 
 
@@ -321,11 +430,8 @@ var d string
 
 # 參考連結
 
-1. [Eng-doc](http://daringfireball.net/projects/markdown/syntax)
-2. [markdown.tw](https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
-3. [Archetypes](https://gohugo.io/content-management/archetypes/)
-4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
-5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+1. [hugo-theme-learn](https://github.com/matcornic/hugo-theme-learn)
+2. [hugo-theme-learn doc](https://learn.netlify.app/en/)
 
 
-[google]: https://www.google.com "Search Engine"
+[learnDoc]: https://learn.netlify.app/en/ "learnDoc"

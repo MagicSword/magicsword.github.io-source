@@ -6,14 +6,13 @@ draft = false
 toc = false
 categories = ["technology"]
 tags = ["blog", "hugo"]
-pre ="<i class='fa fa-file'></i> "
-type="page" # set "slide" to display it fullscreen with reveal.js
-images = [
-  "https://source.unsplash.com/category/technology/1600x900"
-] # overrides the site-wide open graph image
+pre = "<i class='fab fa-github'></i> "
+post ="<i class='fa fa-file'></i> "
 +++
 
+### Log
 
-this page for placeholder.
+* 20220407 change theme to [hugo-theme-learn](https://github.com/matcornic/hugo-theme-learn)
+
 
 

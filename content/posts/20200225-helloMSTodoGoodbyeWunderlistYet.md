@@ -1,11 +1,11 @@
 +++
-title = "Minecraft With Python"
-date = 2018-08-06T01:31:04+08:00
-description = "Playing MineCraft with Python"
+title = "20200225 HelloMSTodoGoodbyeWunderlistYet"
+date = 2020-02-25T21:44:55+08:00
+description = "Description"
 draft = false
 toc = true  # by after-dark
-categories = ["technology"]
-tags = ["minecraft", "python","game"]
+categories = ["Technology"]
+tags = ["hello", "world"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
@@ -13,7 +13,8 @@ images = [
 ] # overrides the site-wide open graph image
 +++
 
-Getting Started with Minecraft Pi with Python
+Before you continue, please take a moment to configure your archetypes.
+
 
 <!--more-->
 
@@ -26,20 +27,6 @@ Task list: :smile:
 
 
 # 概述
-
-使用 Python 來控制 MineCraft 的動作。
-
-
-# 安裝
-
-1. 安裝 MineCraft
-    $800
-2. 安裝 Python
-    目前是用 Anaconda  3.6
-3. 安裝raspberryjammod
-    為 rpi開發的mod，raspbian上預設安裝
-4. 使用
-    在遊戲中，用 `/py some-file-of-python` 就可以執行 python script
 
 
 # Docdock
@@ -74,14 +61,7 @@ Task list: :smile:
 ### excerpt
 
 
-{{%excerpt%}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in _reprehenderit in voluptate_
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{{% /excerpt%}}
+
 　
 ### excerpt-include
 
@@ -95,7 +75,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ### icon
 
-{{< icon name="film" size="large" >}}
 
 ### Mermaid
 
@@ -333,10 +312,12 @@ var d string
 
 
 # 參考連結
-1. [PYTHON CODING FOR MINECRAFT](https://www.instructables.com/id/Python-coding-for-Minecraft/) 
-2. [Getting Started with Minecraft Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-minecraft-pi/5) 
-3. https://github.com/arpruss/raspberryjammod
-4. https://www.stuffaboutcode.com/p/minecraft-api-reference.html
+
+1. [Eng-doc](http://daringfireball.net/projects/markdown/syntax)
+2. [markdown.tw](https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md)
+3. [Archetypes](https://gohugo.io/content-management/archetypes/)
+4. [Customizing](https://comfusion.github.io/after-dark/#customizing)
+5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
 
-[google]: "https://www.google.com" "Search Engine"
+[google]: https://www.google.com "Search Engine"

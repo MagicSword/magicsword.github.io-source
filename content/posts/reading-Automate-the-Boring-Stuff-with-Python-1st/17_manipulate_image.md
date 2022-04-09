@@ -1,17 +1,18 @@
 +++
-title = "Hugo Theme Docdock Shortcode"
-date = 2019-12-13T01:13:34+08:00
-description = "Hugo theme docdock shortcode"
+title = "CHAPTER 17 處理影像圖片"
+date = 2018-08-11T18:41:28+08:00
+description = "CHAPTER 17 處理影像圖片"
 draft = true
-toc = true
-categories = ["Blog"]
-tags = ["hugo", "blog"]
+toc = true  # by after-dark
+categories = ["technology"]
+tags = ["hello", "world"]
 pre ="<i class='fa fa-file'></i> "
 type="page" # set "slide" to display it fullscreen with reveal.js
 images = [
-  "https://source.unsplash.com/category/technology/1600x900"
+  "https://source.unsplash.com/category/technology/"
 ] # overrides the site-wide open graph image
 +++
+
 Before you continue, please take a moment to configure your archetypes.
 
 
@@ -318,4 +319,4 @@ var d string
 5. [Emoji連結](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
 
-[google]: https://www.google.com "Search Engine"
+[google]: "https://www.google.com" "Search Engine"

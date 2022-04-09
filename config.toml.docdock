@@ -1,0 +1,69 @@
+DefaultContentLanguage = "en"
+baseURL = "/"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disqusShortname = "neromiller-github"
+enableEmoji = true
+enableMissingTranslationPlaceholders = false
+languageCode = "en-us"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+staticDir = ["static"]
+theme = "docdock"
+themesdir = "themes"
+title = "After-Dark"
+[[menu.shortcuts]]
+identifier = "MD.syntax"
+name = "<i class='fa fa-github'></i> <label>MD Syntax</label>"
+url = "https://www.markdownguide.org/extended-syntax/" 
+weight = 9
+[[menu.shortcuts]]
+identifier = "docdock.doc"
+name = "<i class='fa fa-github'></i> <label>DocDock theme doc</label>"
+url = "https://docdock.netlify.com/shortcodes/"
+weight = 7
+[[menu.shortcuts]]
+identifier = "github.page"
+name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+url = "https://github.com/MagicSword/"
+weight = 6
+[[menu.shortcuts]]
+identifier = "hugodoc"
+name = "<i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>"
+url = "https://gohugo.io/"
+weight = 5
+[[menu.shortcuts]]
+name = "<i class='fa fa-car'></i> <label>FontAwesome Icon</label>"
+url = "https://docdock.netlify.com/shortcodes/icon/"
+weight = 8
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> <label>About</label>"
+url = "/about/"
+weight = 3
+[[menu.shortcuts]]
+name = "<i class='fa fa-folder-open'></i> <label>Categories</label>"
+url = "/categories/"
+weight = 2
+[[menu.shortcuts]]
+name = "<i class='fa fa-tags'></i> <label>Tags</label>"
+pre = "<h3>More</h3>"
+url = "/tags/"
+weight = 1
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+[params]
+disableHomeIcon = false
+disableNavChevron = true
+disableSearch = false
+editURL = "https://github.com/MagicSword/magicsword.github.io-source/edit/master/content/"
+enableGitInfo = true
+highlightClientSide = true
+menushortcutsnewtab = false
+ordersectionsby = "weight"
+showVisitedLinks = true
+#themeStyle = "flex" 
+themeStyle = "original"
+themeVariant = "blue"
+[taxonomies]
+category = "categories"
+tag = "tags"

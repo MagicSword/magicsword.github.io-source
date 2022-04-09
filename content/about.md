@@ -84,6 +84,8 @@ Dark
 
 * paste
 
+20220406
+* docdock 壞了， 可能是 tags 的問題。所以換回 hugo-theme-learn
 
 # Site:
 1. [forestry][forestry.io]

@@ -43,11 +43,9 @@ Date: 2019-11-29 2019-12-29  虎尾鎮立圖書館
     * 了解中國近代史
     * Good book，以英國人的觀點，來看中國近代與世界各國的關係。    
 
-{{%excerpt%}} 
 **References Examples**
 * Derwing, T. M., Rossiter, M. J., & Munro, M. J. (2002). Teaching native speakers to listen to foreign-accented speech. Journal of Multilingual and Multicultural Development, 23(4), 245-259.
 * Thomas, H. K. (2004). Training strategies for improving listeners' comprehension of foreign-accented speech (Doctoral dissertation). University of Colorado, Boulder.
-{{% /excerpt%}}
 
 # 參考連結
 
